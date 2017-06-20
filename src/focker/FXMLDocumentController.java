@@ -5,6 +5,9 @@
  */
 package focker;
 
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -16,10 +19,14 @@ import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import javafx.util.Duration;
+import javax.imageio.ImageIO;
 
 /**
  *
@@ -28,9 +35,31 @@ import javafx.util.Duration;
 public class FXMLDocumentController implements Initializable {
     
     public static String[]deal1 = new String[40];
+    public static int sw = 1;
+    public static int q;
+    public static boolean rewrite = true;
     
     @FXML
     private ImageView ImageA;
+    @FXML
+    private ImageView ImageB;
+    @FXML
+    private ImageView ImageC;
+    @FXML
+    private ImageView ImageD;
+    @FXML
+    private ImageView ImageE;
+    @FXML
+    private ImageView ImageA1;
+    @FXML
+    private ImageView ImageB1;
+    @FXML
+    private ImageView ImageC1;
+    @FXML
+    private ImageView ImageD1;
+    @FXML
+    private ImageView ImageE1;
+    //@FXML private Label fileSelected;
     private Button raise;
     private Button call;
     
@@ -41,7 +70,7 @@ public class FXMLDocumentController implements Initializable {
         
     }
     
-    public void ButtonCalle_Click (ActionEvent event)
+    public void ButtonCalle_Click (ActionEvent event) throws FileNotFoundException
     {
         Cards1 crd = new Cards1();
         crd.Dealer();
@@ -52,44 +81,60 @@ public class FXMLDocumentController implements Initializable {
         // TODO
     }    
     
-    
     private final class Cards1 extends FXMLDocumentController{
 
+        
+        private BufferedImage cardImage;
+        private String faceName,suit;
+        private int faceValue;
+        
         public boolean isFirstRoundCompleted = false;
-        public String temp[] = {"2","3","4","5","6","7","8","9","10","11","12","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54"};
+        public String temp[] = {"02.png","03.png","04.png","05.png","06.png","07.png","08.png","09.png","10.png","11.png","12.png","14.png","15.png","16.png","17.png","18.png","19.png","20.png","21.png","22.png","23.png","24.png","25.png","26.png","27.png","28.png","29.png","30.png","31.png","32.png","33.png","34.png","35.png","36.png","37.png","38.png","39.png","40.png","41.png","42.png","43.png","44.png","45.png","46.png","47.png","48.png","49.png","50.png","51.png","52.png","53.png"};
         //public static final String[]deal1 = new String[40];
         
-        public Cards1() 
+        public Cards1() throws FileNotFoundException 
         {
+            //ImageA = new ImageView(new Image(getClass().getResourceAsStream("/Resources/Images/cards/02.png")));
+            //ImageA.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/02.png")));
             
-           TranslateTransition transition = new TranslateTransition(); 
-           transition.setDuration(Duration.millis(50));
-           transition.setNode(ImageA);
+            TranslateTransition transition = new TranslateTransition(); 
+            transition.setDuration(Duration.millis(50));
+            transition.setNode(ImageA);
 
-           transition.setToY(-200);
+            transition.setToY(-200);
 
-           transition.play();
+            transition.play();
            //CardSelect();
         }
         
+        
+        public Cards1(BufferedImage card)
+        {
+            cardImage = card;
+        }
         /**
          * Randomly select 12 cards and remove from the array and display it
          */
-        public void CardSelect()
+        public void CardSelect() throws IOException
         {
-            String cards[] = {"2","3","4","5","6","7","8","9","10","11","12","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54"};
-            
+            String cards[] = {"02.png","03.png","04.png","05.png","06.png","07.png","08.png","09.png","10.png","11.png","12.png","14.png","15.png","16.png","17.png","18.png","19.png","20.png","21.png","22.png","23.png","24.png","25.png","26.png","27.png","28.png","29.png","30.png","31.png","32.png","33.png","34.png","35.png","36.png","37.png","38.png","39.png","40.png","41.png","42.png","43.png","44.png","45.png","46.png","47.png","48.png","49.png","50.png","51.png","52.png","53.png"};
+            String player1[] = new String[2];
+            String player2[] = new String[2];
+            String player3[] = new String[2];
+            String player4[] = new String[2];
+            String player5[] = new String[2];
             
             int j = 0;
             
-            int[] card1 = new int[12];
+            int[] card1 = new int[10];
+            
             //int[] card2 = new int[6];
             int randomNum1;
             //int randomNum2;
 
             Random rand = new Random();
             rand.nextInt(52);
-            for (int i = 0; i < 12; i++) 
+            for (int i = 0; i < 10; i++) 
             {
                 randomNum1 = rand.nextInt(52); // Random number created here.
                 for (int x = 0; x < i; x++) 
@@ -107,40 +152,166 @@ public class FXMLDocumentController implements Initializable {
             {
                 System.out.print(card1[i] + " ");
                 int position = card1[i];
-                System.out.print(cards[position] +"\n");
                 
-                //***********************temp = ArrayUtils.remove(temp,position);
+                //q = 0;
+                switch(sw)
+                {
+                    case 1:player1[0] = cards[position];
+                    ImageA.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+player1[0])));
+                    TranslateTransition transition = new TranslateTransition(); 
+                    transition.setDuration(Duration.millis(200));
+                    transition.setNode(ImageA);
+
+                    transition.setToY(-50);
+                    transition.setToX(-300);
+
+                    transition.play();
+                    sw++;break;
+                    case 2:player2[0] = cards[position];
+                    ImageB.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+player2[0])));
+                    TranslateTransition transition1 = new TranslateTransition(); 
+                    transition1.setDuration(Duration.millis(250));
+                    transition1.setNode(ImageB);
+
+                    transition1.setToY(-200);
+                    transition1.setToX(-200);
+                    
+
+                    transition1.play();
+                    sw++;break;
+                    case 3:player3[0] = cards[position];
+                    ImageC.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+player3[0])));
+                    TranslateTransition transition2 = new TranslateTransition(); 
+                    transition2.setDuration(Duration.millis(300));
+                    transition2.setNode(ImageC);
+
+                    transition2.setToY(-225);
+                    transition2.setToX(-12.5);
+
+                    transition2.play();
+                    sw++;break;
+                    case 4:player4[0] = cards[position];
+                    ImageD.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+player4[0])));
+                    TranslateTransition transition4 = new TranslateTransition(); 
+                    transition4.setDuration(Duration.millis(350));
+                    transition4.setNode(ImageD);
+
+                    transition4.setToY(-200);
+                    transition4.setToX(200);
+
+                    transition4.play();
+                    sw++;break;
+                    case 5:player5[0] = cards[position];
+                    ImageE.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+player5[0])));
+                    TranslateTransition transition5 = new TranslateTransition(); 
+                    transition5.setDuration(Duration.millis(400));
+                    transition5.setNode(ImageE);
+
+                    transition5.setToY(-50);
+                    transition5.setToX(300);
+
+                    transition5.play();
+                    sw++;break;
+                    case 6:player1[1] = cards[position];
+                    ImageA1.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+player1[1])));
+                    TranslateTransition transition6 = new TranslateTransition(); 
+                    transition6.setDuration(Duration.millis(450));
+                    transition6.setNode(ImageA1);
+
+                    transition6.setToY(-50);
+                    transition6.setToX(-275);
+
+                    transition6.play();
+                    sw++;break;
+                    case 7:player2[1] = cards[position];
+                    ImageB1.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+player2[1])));
+                    TranslateTransition transition7 = new TranslateTransition(); 
+                    transition7.setDuration(Duration.millis(500));
+                    transition7.setNode(ImageB1);
+
+                    transition7.setToY(-200);
+                    transition7.setToX(-175);
+
+                    transition7.play();
+                    sw++;break;
+                    case 8:player3[1] = cards[position];
+                    ImageC1.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+player3[1])));
+                    TranslateTransition transition8 = new TranslateTransition(); 
+                    transition8.setDuration(Duration.millis(550));
+                    transition8.setNode(ImageC1);
+
+                    transition8.setToY(-225);
+                    transition8.setToX(12.5);
+
+                    transition8.play();
+                    sw++;break;
+                    case 9:player4[1] = cards[position];
+                    ImageD1.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+player4[1])));
+                    TranslateTransition transition9 = new TranslateTransition(); 
+                    transition9.setDuration(Duration.millis(600));
+                    transition9.setNode(ImageD1);
+
+                    transition9.setToY(-200);
+                    transition9.setToX(225);
+
+                    transition9.play();
+                    sw++;break;
+                    case 10:player5[1] = cards[position];
+                    ImageE1.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+player5[1])));
+                    TranslateTransition transition10 = new TranslateTransition(); 
+                    transition10.setDuration(Duration.millis(650));
+                    transition10.setNode(ImageE1);
+
+                    transition10.setToY(-50);
+                    transition10.setToX(275);
+
+                    transition10.play();
+                    break;
+                }
+                System.out.print(cards[position] +"\n");
                 
                 String Value = cards[position];
                 List <String> list = new ArrayList<>(Arrays.asList(temp));
                 list.remove(Value);
                 temp = list.toArray(new String[0]);
                 
-                //deal1[i]=temp[i];
+                AnchorPane root = new AnchorPane();
+                Scene scene = new Scene(root);
                 
-                //System.out.print( "->"+position+"<-");
-                //isFirstRoundCompleted = true;
-                //System.out.println("------");
+            }
+            for(String st:player1)
+            {
+                System.out.println("player1"+st);
             }
             
-            for (int l = 0; l < temp.length; l++) {
-                //System.out.print(temp1 + " ");
-                deal1[l]=temp[l];
-            }
-            for(String te : deal1)
+            for(String ss:player2)
             {
-                System.out.print(te+" ");
+                System.out.println("player2"+ss);
             }
-
+            
+            
+//            for(String se : cards)
+//            {
+//                Cards1 card = new Cards1(ImageIO.read(new File("res/Images/cards/"+se)));
+//                System.out.println(card);
+//            }
+            
+            
+//            System.arraycopy(temp, 0, deal1, 0, temp.length); //System.out.print(temp1 + " ");
+//            for(String te : deal1)
+//            {
+//                Cards1 card = new Cards1("two",2,ImageIO.read(new File("focker/Resources/Images/cards/"+te)));
+//                
+//                System.out.print(card.toString());
+//            } 
         }
+        
         
         public void Dealer()
         {
             
             System.out.println("Call clicked");
             
-//            String deal1[] = new String[40];
-            //deal1 = temp;
             
             int[] deal = new int[5];
             //int[] card2 = new int[6];
@@ -170,7 +341,7 @@ public class FXMLDocumentController implements Initializable {
                 System.out.print(deal1[position] +"\n");
                 
                 //***********************temp = ArrayUtils.remove(temp,position);
-//                
+                
                 String Value = deal1[position];
                 List <String> list = new ArrayList<>(Arrays.asList(deal1));
                 list.remove(Value);

@@ -11,7 +11,7 @@
    <children>
       <ImageView fitHeight="683.0" fitWidth="981.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
          <image>
-            <Image url="@Resources/Images/UNADJUSTEDNONRAW_thumb_582a.jpg" />
+            <Image url="@res/Images/UNADJUSTEDNONRAW_thumb_582a.jpg" />
          </image>
       </ImageView>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
@@ -26,11 +26,16 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <ImageView fx:id="ImageA" fitHeight="67.0" fitWidth="54.0" layoutX="466.0" layoutY="432.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Resources/Images/cards/Ace.jpg" />
-               </image>
-            </ImageView>
+            <ImageView fx:id="ImageA" fitHeight="97.0" fitWidth="64.0" layoutX="459.0" layoutY="447.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="ImageB" fitHeight="97.0" fitWidth="64.0" layoutX="459.0" layoutY="447.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="ImageC" fitHeight="97.0" fitWidth="64.0" layoutX="459.0" layoutY="447.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="ImageD" fitHeight="97.0" fitWidth="64.0" layoutX="459.0" layoutY="447.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="ImageE" fitHeight="97.0" fitWidth="64.0" layoutX="459.0" layoutY="447.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="ImageA1" fitHeight="97.0" fitWidth="64.0" layoutX="459.0" layoutY="447.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="ImageB1" fitHeight="97.0" fitWidth="64.0" layoutX="459.0" layoutY="447.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="ImageC1" fitHeight="97.0" fitWidth="64.0" layoutX="459.0" layoutY="447.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="ImageD1" fitHeight="97.0" fitWidth="64.0" layoutX="459.0" layoutY="447.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="ImageE1" fitHeight="97.0" fitWidth="64.0" layoutX="459.0" layoutY="447.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </AnchorPane>
    </children>
