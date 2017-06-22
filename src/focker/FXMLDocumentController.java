@@ -35,30 +35,37 @@ import javax.imageio.ImageIO;
 public class FXMLDocumentController implements Initializable {
     
     public static String[]deal1 = new String[40];
+    public static int[] card1 = new int[10];
     public static int sw = 1;
     public static int q;
     public static boolean rewrite = true;
     
+    public static String player1[] = new String[2];
+    public static String player2[] = new String[2];
+    public static String player3[] = new String[2];
+    public static String player4[] = new String[2];
+    public static String player5[] = new String[2];
+    
     @FXML
-    private ImageView ImageA;
+    private ImageView Image1;
     @FXML
-    private ImageView ImageB;
+    private ImageView Image2;
     @FXML
-    private ImageView ImageC;
+    private ImageView Image3;
     @FXML
-    private ImageView ImageD;
+    private ImageView Image4;
     @FXML
-    private ImageView ImageE;
+    private ImageView Image5;
     @FXML
-    private ImageView ImageA1;
+    private ImageView Image6;
     @FXML
-    private ImageView ImageB1;
+    private ImageView Image7;
     @FXML
-    private ImageView ImageC1;
+    private ImageView Image8;
     @FXML
-    private ImageView ImageD1;
+    private ImageView Image9;
     @FXML
-    private ImageView ImageE1;
+    private ImageView Image10;
     //@FXML private Label fileSelected;
     private Button raise;
     private Button call;
@@ -68,6 +75,11 @@ public class FXMLDocumentController implements Initializable {
         Cards1 crd = new Cards1();
         crd.CardSelect();
         
+    }
+    public void FdownCards(ActionEvent event) throws FileNotFoundException
+    {
+        Cards1 crd1 = new Cards1();
+        crd1.FdownCards(5);
     }
     
     public void ButtonCalle_Click (ActionEvent event) throws FileNotFoundException
@@ -126,15 +138,10 @@ public class FXMLDocumentController implements Initializable {
                 cd++;
                 //System.err.println(cards[m]);
             }
-            String player1[] = new String[2];
-            String player2[] = new String[2];
-            String player3[] = new String[2];
-            String player4[] = new String[2];
-            String player5[] = new String[2];
+            
             
             int j = 0;
             
-            int[] card1 = new int[10];
             
             //int[] card2 = new int[6];
             int randomNum1;
@@ -165,115 +172,116 @@ public class FXMLDocumentController implements Initializable {
                 switch(sw)
                 {
                     case 1:player1[0] = cards[position];
-                    ImageA.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+player1[0])));
+                    Image1.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+player1[0])));
                     TranslateTransition transition = new TranslateTransition(); 
                     transition.setDuration(Duration.millis(200));
-                    transition.setNode(ImageA);
+                    transition.setNode(Image1);
 
-                    transition.setToY(-50);
-                    transition.setToX(-300);
+                    transition.setToY(5);
+                    transition.setToX(-275);
 
                     transition.play();
                     sw++;break;
                     case 2:player2[0] = cards[position];
-                    ImageB.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+player2[0])));
+                    Image2.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+player2[0])));
                     TranslateTransition transition1 = new TranslateTransition(); 
                     transition1.setDuration(Duration.millis(250));
-                    transition1.setNode(ImageB);
+                    transition1.setNode(Image2);
 
                     transition1.setToY(-200);
-                    transition1.setToX(-200);
+                    transition1.setToX(-290);
                     
 
                     transition1.play();
                     sw++;break;
                     case 3:player3[0] = cards[position];
-                    ImageC.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+player3[0])));
+                    Image3.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+player3[0])));
                     TranslateTransition transition2 = new TranslateTransition(); 
                     transition2.setDuration(Duration.millis(300));
-                    transition2.setNode(ImageC);
+                    transition2.setNode(Image3);
 
-                    transition2.setToY(-225);
-                    transition2.setToX(-12.5);
+                    transition2.setToY(-245);
+                    transition2.setToX(-17.5);
 
                     transition2.play();
                     sw++;break;
                     case 4:player4[0] = cards[position];
-                    ImageD.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+player4[0])));
+                    Image4.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+player4[0])));
                     TranslateTransition transition4 = new TranslateTransition(); 
                     transition4.setDuration(Duration.millis(350));
-                    transition4.setNode(ImageD);
+                    transition4.setNode(Image4);
 
                     transition4.setToY(-200);
-                    transition4.setToX(200);
+                    transition4.setToX(255);
 
                     transition4.play();
                     sw++;break;
                     case 5:player5[0] = cards[position];
-                    ImageE.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+player5[0])));
+                    Image5.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+player5[0])));
                     TranslateTransition transition5 = new TranslateTransition(); 
                     transition5.setDuration(Duration.millis(400));
-                    transition5.setNode(ImageE);
+                    transition5.setNode(Image5);
 
-                    transition5.setToY(-50);
+                    transition5.setToY(-5);
                     transition5.setToX(300);
 
                     transition5.play();
                     sw++;break;
                     case 6:player1[1] = cards[position];
-                    ImageA1.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+player1[1])));
+                    Image6.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+player1[1])));
                     TranslateTransition transition6 = new TranslateTransition(); 
-                    transition6.setDuration(Duration.millis(450));
-                    transition6.setNode(ImageA1);
+                    transition6.setDuration(Duration.millis(600));
+                    transition6.setNode(Image6);
 
-                    transition6.setToY(-50);
-                    transition6.setToX(-275);
+                    transition6.setToY(-30);
+                    transition6.setToX(-295);
 
                     transition6.play();
                     sw++;break;
                     case 7:player2[1] = cards[position];
-                    ImageB1.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+player2[1])));
+                    Image7.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+player2[1])));
                     TranslateTransition transition7 = new TranslateTransition(); 
-                    transition7.setDuration(Duration.millis(500));
-                    transition7.setNode(ImageB1);
+                    transition7.setDuration(Duration.millis(650));
+                    transition7.setNode(Image7);
 
-                    transition7.setToY(-200);
-                    transition7.setToX(-175);
+                    transition7.setToY(-220);
+                    transition7.setToX(-255);
 
                     transition7.play();
                     sw++;break;
                     case 8:player3[1] = cards[position];
-                    ImageC1.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+player3[1])));
+                    Image8.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+player3[1])));
                     TranslateTransition transition8 = new TranslateTransition(); 
-                    transition8.setDuration(Duration.millis(550));
-                    transition8.setNode(ImageC1);
+                    transition8.setDuration(Duration.millis(700));
+                    transition8.setNode(Image8);
 
-                    transition8.setToY(-225);
-                    transition8.setToX(12.5);
+                    transition8.setToY(-245);
+                    transition8.setToX(17.5);
 
                     transition8.play();
                     sw++;break;
                     case 9:player4[1] = cards[position];
-                    ImageD1.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+player4[1])));
+                    Image9.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+player4[1])));
                     TranslateTransition transition9 = new TranslateTransition(); 
-                    transition9.setDuration(Duration.millis(600));
-                    transition9.setNode(ImageD1);
+                    transition9.setDuration(Duration.millis(750));
+                    transition9.setNode(Image9);
 
-                    transition9.setToY(-200);
-                    transition9.setToX(225);
+                    transition9.setToY(-190);
+                    transition9.setToX(290);
 
                     transition9.play();
                     sw++;break;
                     case 10:player5[1] = cards[position];
-                    ImageE1.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+player5[1])));
+                    Image10.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+player5[1])));
                     TranslateTransition transition10 = new TranslateTransition(); 
-                    transition10.setDuration(Duration.millis(650));
-                    transition10.setNode(ImageE1);
+                    transition10.setDuration(Duration.millis(800));
+                    transition10.setNode(Image10);
 
-                    transition10.setToY(-50);
-                    transition10.setToX(325);
+                    transition10.setToY(20);
+                    transition10.setToX(270);
 
                     transition10.play();
+                    sw = 1;
                     break;
                 }
                 System.out.print(cards[position] +"\n");
@@ -312,6 +320,75 @@ public class FXMLDocumentController implements Initializable {
 //                
 //                System.out.print(card.toString());
 //            } 
+        }
+        
+        public void FdownCards(int player)
+        {
+            int plyerNo = player;
+            for (int i = 0; i < card1.length; i++)
+            {
+                int position = card1[i];
+
+                switch(plyerNo)
+                {
+                    case 1:Image1.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+player1[0])));
+                    Image2.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/BackC.png")));
+                    Image3.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/BackC.png")));
+                    Image4.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/BackC.png")));
+                    Image5.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/BackC.png")));
+                    Image6.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+player1[1])));
+                    Image7.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/BackC.png")));
+                    Image8.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/BackC.png")));
+                    Image9.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/BackC.png")));
+                    Image10.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/BackC.png")));
+                    break;
+                    case 2:Image2.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+player2[0])));
+                    Image1.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/BackC.png")));
+                    Image3.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/BackC.png")));
+                    Image4.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/BackC.png")));
+                    Image5.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/BackC.png")));
+                    Image6.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/BackC.png")));
+                    Image7.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+player2[1])));
+                    Image8.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/BackC.png")));
+                    Image9.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/BackC.png")));
+                    Image10.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/BackC.png")));
+                    break;
+                    case 3:Image3.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+player3[0])));
+                    Image1.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/BackC.png")));
+                    Image2.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/BackC.png")));
+                    Image4.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/BackC.png")));
+                    Image5.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/BackC.png")));
+                    Image6.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/BackC.png")));
+                    Image7.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/BackC.png")));
+                    Image8.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+player3[1])));
+                    Image9.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/BackC.png")));
+                    Image10.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/BackC.png")));
+                    break;
+                    case 4:Image4.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+player4[0])));
+                    Image1.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/BackC.png")));
+                    Image2.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/BackC.png")));
+                    Image3.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/BackC.png")));
+                    Image5.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/BackC.png")));
+                    Image6.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/BackC.png")));
+                    Image7.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/BackC.png")));
+                    Image8.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/BackC.png")));
+                    Image9.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+player4[1])));
+                    Image10.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/BackC.png")));
+                    break;
+                    case 5:Image5.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+player5[0])));
+                    Image1.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/BackC.png")));
+                    Image2.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/BackC.png")));
+                    Image3.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/BackC.png")));
+                    Image4.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/BackC.png")));
+                    Image6.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/BackC.png")));
+                    Image7.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/BackC.png")));
+                    Image8.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/BackC.png")));
+                    Image9.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/BackC.png")));
+                    Image10.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+player5[1])));
+                    break;
+                }
+            }
+            
         }
         
         

@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="677.0" prefWidth="981.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="focker.FXMLDocumentController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="839.0" prefWidth="1248.0" style="-fx-background-color: #a77c71;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="focker.FXMLDocumentController">
    <children>
       <ImageView fitHeight="683.0" fitWidth="981.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
          <image>
@@ -16,26 +16,27 @@
       </ImageView>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
-            <Button fx:id="raise" layoutX="918.0" layoutY="639.0" mnemonicParsing="false" onAction="#handleButtonAction" style="-fx-background-color: #ff0000; -fx-background-radius: 22; -fx-text-fill: #ffffff;" text="RAISE">
+            <Button fx:id="raise" layoutX="1112.0" layoutY="785.0" mnemonicParsing="false" onAction="#handleButtonAction" style="-fx-background-color: #ff0000; -fx-background-radius: 22; -fx-text-fill: #ffffff;" text="RAISE">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="call" layoutX="858.0" layoutY="639.0" mnemonicParsing="false" onAction="#ButtonCalle_Click" style="-fx-background-color: #3296ED; -fx-background-radius: 20; -fx-text-fill: #ffffff;" text="CALL">
+            <Button fx:id="call" layoutX="1048.0" layoutY="785.0" mnemonicParsing="false" onAction="#FdownCards" style="-fx-background-color: #3296ED; -fx-background-radius: 20; -fx-text-fill: #ffffff;" text="CALL">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <ImageView fx:id="ImageA" fitHeight="97.0" fitWidth="64.0" layoutX="459.0" layoutY="447.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="ImageB" fitHeight="97.0" fitWidth="64.0" layoutX="459.0" layoutY="447.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="ImageC" fitHeight="97.0" fitWidth="64.0" layoutX="459.0" layoutY="447.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="ImageD" fitHeight="97.0" fitWidth="64.0" layoutX="459.0" layoutY="447.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="ImageE" fitHeight="97.0" fitWidth="64.0" layoutX="459.0" layoutY="447.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="ImageA1" fitHeight="97.0" fitWidth="64.0" layoutX="459.0" layoutY="447.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="ImageB1" fitHeight="97.0" fitWidth="64.0" layoutX="459.0" layoutY="447.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="ImageC1" fitHeight="97.0" fitWidth="64.0" layoutX="459.0" layoutY="447.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="ImageD1" fitHeight="97.0" fitWidth="64.0" layoutX="459.0" layoutY="447.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="ImageE1" fitHeight="97.0" fitWidth="64.0" layoutX="459.0" layoutY="447.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="Image1" fitHeight="97.0" fitWidth="64.0" layoutX="592.0" layoutY="524.0" pickOnBounds="true" preserveRatio="true" rotate="-118.6" />
+            <ImageView fx:id="Image2" fitHeight="97.0" fitWidth="64.0" layoutX="592.0" layoutY="524.0" pickOnBounds="true" preserveRatio="true" rotate="-42.0" />
+            <ImageView fx:id="Image3" fitHeight="97.0" fitWidth="64.0" layoutX="592.0" layoutY="524.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="Image4" fitHeight="97.0" fitWidth="64.0" layoutX="592.0" layoutY="524.0" pickOnBounds="true" preserveRatio="true" rotate="45.0" />
+            <ImageView fx:id="Image5" fitHeight="97.0" fitWidth="64.0" layoutX="592.0" layoutY="524.0" pickOnBounds="true" preserveRatio="true" rotate="120.3" />
+            <ImageView fx:id="Image6" fitHeight="97.0" fitWidth="64.0" layoutX="592.0" layoutY="524.0" pickOnBounds="true" preserveRatio="true" rotate="-118.6" />
+            <ImageView fx:id="Image7" fitHeight="97.0" fitWidth="64.0" layoutX="592.0" layoutY="524.0" pickOnBounds="true" preserveRatio="true" rotate="-40.6" />
+            <ImageView fx:id="Image8" fitHeight="97.0" fitWidth="64.0" layoutX="592.0" layoutY="524.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="Image9" fitHeight="97.0" fitWidth="64.0" layoutX="592.0" layoutY="524.0" pickOnBounds="true" preserveRatio="true" rotate="45.0" />
+            <ImageView fx:id="Image10" fitHeight="97.0" fitWidth="64.0" layoutX="592.0" layoutY="524.0" pickOnBounds="true" preserveRatio="true" rotate="119.1" />
+            <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="470.0" layoutY="351.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </AnchorPane>
    </children>
