@@ -1,23 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="458.0" prefWidth="381.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111">
-   <children>
-      <Label layoutX="123.0" layoutY="74.0" prefHeight="103.0" prefWidth="161.0" text="FOKER" textAlignment="CENTER" textFill="#9e4a4a">
+<AnchorPane fx:id="rootScreen" prefHeight="601.0" prefWidth="974.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="focker.Main_screenController">
+       <children>
+        <Label layoutX="-28.0" layoutY="438.0" prefHeight="211.0" prefWidth="564.0" text="♠♦Foker♥♣" textAlignment="CENTER" textFill="RED">
+            <font>
+                <Font name="Elektron" size="96.0" />
+            </font>
+        </Label>
+        <Label layoutX="273.0" layoutY="602.0" prefHeight="31.0" prefWidth="264.0" text="Silent Assessents" textFill="RED">
+            <font>
+                <Font name="Elektron" size="23.0" />
+            </font>
+        </Label>
+      <Label layoutX="85.0" layoutY="394.0" prefHeight="110.0" prefWidth="69.0" text="♠">
          <font>
-            <Font name="Britannic Bold" size="36.0" />
+            <Font size="96.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="0.4809523809523809" endY="1.0" startX="0.48095238095238096" startY="0.9428571428571428">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label layoutX="154.0" layoutY="394.0" prefHeight="131.0" prefWidth="67.0" text="♦" textFill="#fc0000">
+         <font>
+            <Font size="96.0" />
          </font>
       </Label>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="91.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true" />
-      <Label layoutX="140.0" layoutY="364.0" prefHeight="49.0" prefWidth="120.0" text="Loading......">
+      <Label layoutX="221.0" layoutY="394.0" prefHeight="115.0" prefWidth="67.0" text="♥" textFill="#fc0000">
          <font>
-            <Font name="Buxton Sketch" size="21.0" />
+            <Font size="96.0" />
          </font>
       </Label>
-   </children>
+      <Label layoutX="288.0" layoutY="394.0" prefHeight="45.0" prefWidth="77.0" text="♣">
+         <font>
+            <Font size="96.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="0.4809523809523809" endY="1.0" startX="0.48095238095238096" startY="0.9238095238095239">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+    </children>
 </AnchorPane>
