@@ -28,7 +28,7 @@ public class Focker extends Application {
         scene.getStylesheets().add(css);
         stage.setScene(scene);
         stage.show();
-        stage.setResizable(false);
+        stage.setResizable(true);
 
     }
 

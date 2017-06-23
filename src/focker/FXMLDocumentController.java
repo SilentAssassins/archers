@@ -137,7 +137,7 @@ public class FXMLDocumentController implements Initializable {
             cardImage = card;
         }
         /**
-         * Randomly select 12 cards and remove from the array and display it
+         * Randomly select 10 cards and remove from the array and display it
          */
         public void CardSelect() throws IOException
         {
@@ -181,6 +181,12 @@ public class FXMLDocumentController implements Initializable {
                 int position = card1[i];
                 
                 //q = 0;
+                
+                /**
+                 * then ask the player to see those two cards.
+                 * Randomly select vena numbers tika cards array ekae tiyana string value eken aran table eke ImageView eke set karanava
+                 */    
+                
                 switch(sw)
                 {
                     case 1:player1[0] = cards[position];
@@ -318,6 +324,9 @@ public class FXMLDocumentController implements Initializable {
             }
         }
         
+        /**
+         * first begin with two cards face down to each player.
+         */
         public void Begin()
         {
             for(int p = 1;p<=10;p++)
@@ -416,6 +425,10 @@ public class FXMLDocumentController implements Initializable {
             }
         }
         
+        /**
+         * the two initial cards are the only cards that are visible to all players.
+         * @param player player ge position eka object eka through pass karala ee player ge cards tika vitharak display karanava.
+         */
         public void FdownCards(int player)
         {
             int plyerNo = player;
