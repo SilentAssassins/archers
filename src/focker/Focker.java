@@ -5,36 +5,31 @@
  */
 package focker;
 
-import java.io.IOException;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
+
 
 /**
  *
  * @author Menake
  */
 public class Focker extends Application {
-    
+
+    public static Boolean isSplashLoaded = false;
+
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
-        
+        Parent root = FXMLLoader.load(getClass().getResource("main_menu.fxml"));
         Scene scene = new Scene(root);
-        
+        String css = Focker.class.getResource("screenControler.css").toExternalForm();
+        scene.getStylesheets().add(css);
         stage.setScene(scene);
         stage.show();
         stage.setResizable(false);
+
     }
 
     /**
@@ -43,5 +38,5 @@ public class Focker extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-    
+
 }

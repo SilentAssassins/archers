@@ -24,6 +24,7 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import javax.imageio.ImageIO;
@@ -67,9 +68,14 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private ImageView Image10;
     //@FXML private Label fileSelected;
+    @FXML
     private Button raise;
+    @FXML
     private Button call;
+    @FXML
+    private StackPane gameboard;
     
+    @FXML
     public  void handleButtonAction(ActionEvent event) throws IOException {
         System.out.println("RAISE");
         Cards1 crd = new Cards1();
@@ -297,8 +303,8 @@ public class FXMLDocumentController implements Initializable {
                 list.remove(Value);
                 temp = list.toArray(new String[0]);
                 
-                AnchorPane root = new AnchorPane();
-                Scene scene = new Scene(root);
+               // AnchorPane root = new AnchorPane();
+                //Scene scene = new Scene(root);
                 
             }
             for(String st:player1)
