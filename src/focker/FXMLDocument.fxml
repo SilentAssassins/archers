@@ -16,27 +16,32 @@
       </ImageView>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
-            <Button fx:id="raise" layoutX="1112.0" layoutY="785.0" mnemonicParsing="false" onAction="#handleButtonAction" style="-fx-background-color: #ff0000; -fx-background-radius: 22; -fx-text-fill: #ffffff;" text="RAISE">
+            <Button fx:id="raise" layoutX="1112.0" layoutY="766.0" mnemonicParsing="false" onAction="#FdownCards" style="-fx-background-color: #ff0000; -fx-background-radius: 22; -fx-text-fill: #ffffff;" text="Show only me">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="call" layoutX="1048.0" layoutY="785.0" mnemonicParsing="false" onAction="#FdownCards" style="-fx-background-color: #3296ED; -fx-background-radius: 20; -fx-text-fill: #ffffff;" text="CALL">
+            <Button fx:id="call" layoutX="976.0" layoutY="766.0" mnemonicParsing="false" onAction="#BeginButton" style="-fx-background-color: #42668a; -fx-background-radius: 20; -fx-text-fill: #ffffff;" text="CALL">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <ImageView fx:id="Image1" fitHeight="97.0" fitWidth="64.0" layoutX="592.0" layoutY="524.0" pickOnBounds="true" preserveRatio="true" rotate="-118.6" />
-            <ImageView fx:id="Image2" fitHeight="97.0" fitWidth="64.0" layoutX="592.0" layoutY="524.0" pickOnBounds="true" preserveRatio="true" rotate="-42.0" />
-            <ImageView fx:id="Image3" fitHeight="97.0" fitWidth="64.0" layoutX="592.0" layoutY="524.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="Image4" fitHeight="97.0" fitWidth="64.0" layoutX="592.0" layoutY="524.0" pickOnBounds="true" preserveRatio="true" rotate="45.0" />
-            <ImageView fx:id="Image5" fitHeight="97.0" fitWidth="64.0" layoutX="592.0" layoutY="524.0" pickOnBounds="true" preserveRatio="true" rotate="120.3" />
-            <ImageView fx:id="Image6" fitHeight="97.0" fitWidth="64.0" layoutX="592.0" layoutY="524.0" pickOnBounds="true" preserveRatio="true" rotate="-118.6" />
-            <ImageView fx:id="Image7" fitHeight="97.0" fitWidth="64.0" layoutX="592.0" layoutY="524.0" pickOnBounds="true" preserveRatio="true" rotate="-40.6" />
-            <ImageView fx:id="Image8" fitHeight="97.0" fitWidth="64.0" layoutX="592.0" layoutY="524.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="Image9" fitHeight="97.0" fitWidth="64.0" layoutX="592.0" layoutY="524.0" pickOnBounds="true" preserveRatio="true" rotate="45.0" />
-            <ImageView fx:id="Image10" fitHeight="97.0" fitWidth="64.0" layoutX="592.0" layoutY="524.0" pickOnBounds="true" preserveRatio="true" rotate="119.1" />
+            <ImageView fx:id="Image1" fitHeight="70.0" fitWidth="51.0" layoutX="599.0" layoutY="519.0" pickOnBounds="true" preserveRatio="true" rotate="-118.6" AnchorPane.bottomAnchor="250.0" AnchorPane.leftAnchor="599.0" AnchorPane.rightAnchor="598.0" AnchorPane.topAnchor="519.0" />
+            <ImageView fx:id="Image2" fitHeight="70.0" fitWidth="51.0" layoutX="599.0" layoutY="519.0" pickOnBounds="true" preserveRatio="true" rotate="-42.0" AnchorPane.bottomAnchor="250.0" AnchorPane.leftAnchor="599.0" AnchorPane.rightAnchor="598.0" AnchorPane.topAnchor="519.0" />
+            <ImageView fx:id="Image3" fitHeight="70.0" fitWidth="51.0" layoutX="599.0" layoutY="519.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="250.0" AnchorPane.leftAnchor="599.0" AnchorPane.rightAnchor="598.0" AnchorPane.topAnchor="519.0" />
+            <ImageView fx:id="Image4" fitHeight="70.0" fitWidth="51.0" layoutX="599.0" layoutY="519.0" pickOnBounds="true" preserveRatio="true" rotate="45.0" AnchorPane.bottomAnchor="250.0" AnchorPane.leftAnchor="599.0" AnchorPane.rightAnchor="598.0" AnchorPane.topAnchor="519.0" />
+            <ImageView fx:id="Image5" fitHeight="70.0" fitWidth="51.0" layoutX="599.0" layoutY="519.0" pickOnBounds="true" preserveRatio="true" rotate="120.3" AnchorPane.bottomAnchor="250.0" AnchorPane.leftAnchor="599.0" AnchorPane.rightAnchor="598.0" AnchorPane.topAnchor="519.0" />
+            <ImageView fx:id="Image6" fitHeight="70.0" fitWidth="51.0" layoutX="599.0" layoutY="519.0" pickOnBounds="true" preserveRatio="true" rotate="-118.6" AnchorPane.bottomAnchor="250.0" AnchorPane.leftAnchor="599.0" AnchorPane.rightAnchor="598.0" AnchorPane.topAnchor="519.0" />
+            <ImageView fx:id="Image7" fitHeight="70.0" fitWidth="51.0" layoutX="599.0" layoutY="519.0" pickOnBounds="true" preserveRatio="true" rotate="-40.6" AnchorPane.bottomAnchor="250.0" AnchorPane.leftAnchor="599.0" AnchorPane.rightAnchor="598.0" AnchorPane.topAnchor="519.0" />
+            <ImageView fx:id="Image8" fitHeight="70.0" fitWidth="51.0" layoutX="599.0" layoutY="519.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="250.0" AnchorPane.leftAnchor="599.0" AnchorPane.rightAnchor="598.0" AnchorPane.topAnchor="519.0" />
+            <ImageView fx:id="Image9" fitHeight="70.0" fitWidth="51.0" layoutX="599.0" layoutY="519.0" pickOnBounds="true" preserveRatio="true" rotate="45.0" AnchorPane.bottomAnchor="250.0" AnchorPane.leftAnchor="599.0" AnchorPane.rightAnchor="598.0" AnchorPane.topAnchor="519.0" />
+            <ImageView fx:id="Image10" fitHeight="70.0" fitWidth="51.0" layoutX="599.0" layoutY="519.0" pickOnBounds="true" preserveRatio="true" rotate="119.1" AnchorPane.bottomAnchor="250.0" AnchorPane.leftAnchor="599.0" AnchorPane.rightAnchor="598.0" AnchorPane.topAnchor="519.0" />
             <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="470.0" layoutY="351.0" pickOnBounds="true" preserveRatio="true" />
+            <Button fx:id="show" layoutX="1043.0" layoutY="766.0" mnemonicParsing="false" onAction="#handleButtonAction" style="-fx-background-color: #0000CD; -fx-background-radius: 22; -fx-text-fill: #ffffff;" text="Show">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
          </children>
       </AnchorPane>
    </children>
