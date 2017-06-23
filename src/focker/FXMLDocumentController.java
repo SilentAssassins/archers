@@ -82,10 +82,16 @@ public class FXMLDocumentController implements Initializable {
         crd1.FdownCards(5);
     }
     
-    public void ButtonCalle_Click (ActionEvent event) throws FileNotFoundException
+    public void ButtonDeler_Click (ActionEvent event) throws FileNotFoundException
     {
         Cards1 crd = new Cards1();
         crd.Dealer();
+    }
+    
+    public void BeginButton(ActionEvent event) throws FileNotFoundException
+    {
+        Cards1 big = new Cards1();
+        big.Begin();
     }
     
     @Override
@@ -173,114 +179,114 @@ public class FXMLDocumentController implements Initializable {
                 {
                     case 1:player1[0] = cards[position];
                     Image1.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+player1[0])));
-                    TranslateTransition transition = new TranslateTransition(); 
-                    transition.setDuration(Duration.millis(200));
-                    transition.setNode(Image1);
-
-                    transition.setToY(5);
-                    transition.setToX(-275);
-
-                    transition.play();
+//                    TranslateTransition transition = new TranslateTransition(); 
+//                    transition.setDuration(Duration.millis(200));
+//                    transition.setNode(Image1);
+//
+//                    transition.setToY(5);
+//                    transition.setToX(-275);
+//
+//                    transition.play();
                     sw++;break;
                     case 2:player2[0] = cards[position];
                     Image2.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+player2[0])));
-                    TranslateTransition transition1 = new TranslateTransition(); 
-                    transition1.setDuration(Duration.millis(250));
-                    transition1.setNode(Image2);
-
-                    transition1.setToY(-200);
-                    transition1.setToX(-290);
-                    
-
-                    transition1.play();
+//                    TranslateTransition transition1 = new TranslateTransition(); 
+//                    transition1.setDuration(Duration.millis(250));
+//                    transition1.setNode(Image2);
+//
+//                    transition1.setToY(-200);
+//                    transition1.setToX(-290);
+//                    
+//
+//                    transition1.play();
                     sw++;break;
                     case 3:player3[0] = cards[position];
                     Image3.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+player3[0])));
-                    TranslateTransition transition2 = new TranslateTransition(); 
-                    transition2.setDuration(Duration.millis(300));
-                    transition2.setNode(Image3);
-
-                    transition2.setToY(-245);
-                    transition2.setToX(-17.5);
-
-                    transition2.play();
+//                    TranslateTransition transition2 = new TranslateTransition(); 
+//                    transition2.setDuration(Duration.millis(300));
+//                    transition2.setNode(Image3);
+//
+//                    transition2.setToY(-245);
+//                    transition2.setToX(-17.5);
+//
+//                    transition2.play();
                     sw++;break;
                     case 4:player4[0] = cards[position];
                     Image4.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+player4[0])));
-                    TranslateTransition transition4 = new TranslateTransition(); 
-                    transition4.setDuration(Duration.millis(350));
-                    transition4.setNode(Image4);
-
-                    transition4.setToY(-200);
-                    transition4.setToX(255);
-
-                    transition4.play();
+//                    TranslateTransition transition4 = new TranslateTransition(); 
+//                    transition4.setDuration(Duration.millis(350));
+//                    transition4.setNode(Image4);
+//
+//                    transition4.setToY(-200);
+//                    transition4.setToX(255);
+//
+//                    transition4.play();
                     sw++;break;
                     case 5:player5[0] = cards[position];
                     Image5.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+player5[0])));
-                    TranslateTransition transition5 = new TranslateTransition(); 
-                    transition5.setDuration(Duration.millis(400));
-                    transition5.setNode(Image5);
-
-                    transition5.setToY(-5);
-                    transition5.setToX(300);
-
-                    transition5.play();
+//                    TranslateTransition transition5 = new TranslateTransition(); 
+//                    transition5.setDuration(Duration.millis(400));
+//                    transition5.setNode(Image5);
+//
+//                    transition5.setToY(-5);
+//                    transition5.setToX(300);
+//
+//                    transition5.play();
                     sw++;break;
                     case 6:player1[1] = cards[position];
                     Image6.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+player1[1])));
-                    TranslateTransition transition6 = new TranslateTransition(); 
-                    transition6.setDuration(Duration.millis(600));
-                    transition6.setNode(Image6);
-
-                    transition6.setToY(-30);
-                    transition6.setToX(-295);
-
-                    transition6.play();
+//                    TranslateTransition transition6 = new TranslateTransition(); 
+//                    transition6.setDuration(Duration.millis(600));
+//                    transition6.setNode(Image6);
+//
+//                    transition6.setToY(-30);
+//                    transition6.setToX(-295);
+//
+//                    transition6.play();
                     sw++;break;
                     case 7:player2[1] = cards[position];
                     Image7.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+player2[1])));
-                    TranslateTransition transition7 = new TranslateTransition(); 
-                    transition7.setDuration(Duration.millis(650));
-                    transition7.setNode(Image7);
-
-                    transition7.setToY(-220);
-                    transition7.setToX(-255);
-
-                    transition7.play();
+//                    TranslateTransition transition7 = new TranslateTransition(); 
+//                    transition7.setDuration(Duration.millis(650));
+//                    transition7.setNode(Image7);
+//
+//                    transition7.setToY(-220);
+//                    transition7.setToX(-255);
+//
+//                    transition7.play();
                     sw++;break;
                     case 8:player3[1] = cards[position];
                     Image8.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+player3[1])));
-                    TranslateTransition transition8 = new TranslateTransition(); 
-                    transition8.setDuration(Duration.millis(700));
-                    transition8.setNode(Image8);
-
-                    transition8.setToY(-245);
-                    transition8.setToX(17.5);
-
-                    transition8.play();
+//                    TranslateTransition transition8 = new TranslateTransition(); 
+//                    transition8.setDuration(Duration.millis(700));
+//                    transition8.setNode(Image8);
+//
+//                    transition8.setToY(-245);
+//                    transition8.setToX(17.5);
+//
+//                    transition8.play();
                     sw++;break;
                     case 9:player4[1] = cards[position];
                     Image9.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+player4[1])));
-                    TranslateTransition transition9 = new TranslateTransition(); 
-                    transition9.setDuration(Duration.millis(750));
-                    transition9.setNode(Image9);
-
-                    transition9.setToY(-190);
-                    transition9.setToX(290);
-
-                    transition9.play();
+//                    TranslateTransition transition9 = new TranslateTransition(); 
+//                    transition9.setDuration(Duration.millis(750));
+//                    transition9.setNode(Image9);
+//
+//                    transition9.setToY(-190);
+//                    transition9.setToX(290);
+//
+//                    transition9.play();
                     sw++;break;
                     case 10:player5[1] = cards[position];
                     Image10.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+player5[1])));
-                    TranslateTransition transition10 = new TranslateTransition(); 
-                    transition10.setDuration(Duration.millis(800));
-                    transition10.setNode(Image10);
-
-                    transition10.setToY(20);
-                    transition10.setToX(270);
-
-                    transition10.play();
+//                    TranslateTransition transition10 = new TranslateTransition(); 
+//                    transition10.setDuration(Duration.millis(800));
+//                    transition10.setNode(Image10);
+//
+//                    transition10.setToY(20);
+//                    transition10.setToX(270);
+//
+//                    transition10.play();
                     sw = 1;
                     break;
                 }
@@ -304,22 +310,104 @@ public class FXMLDocumentController implements Initializable {
             {
                 System.out.println("player2"+ss);
             }
-            
-            
-//            for(String se : cards)
-//            {
-//                Cards1 card = new Cards1(ImageIO.read(new File("res/Images/cards/"+se)));
-//                System.out.println(card);
-//            }
-            
-            
-//            System.arraycopy(temp, 0, deal1, 0, temp.length); //System.out.print(temp1 + " ");
-//            for(String te : deal1)
-//            {
-//                Cards1 card = new Cards1("two",2,ImageIO.read(new File("focker/Resources/Images/cards/"+te)));
-//                
-//                System.out.print(card.toString());
-//            } 
+        }
+        
+        public void Begin()
+        {
+            for(int p = 1;p<=10;p++)
+            {
+                Image1.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/BackC.png")));
+                TranslateTransition transition = new TranslateTransition(); 
+                    transition.setDuration(Duration.millis(200));
+                    transition.setNode(Image1);
+
+                    transition.setToY(5);
+                    transition.setToX(-275);
+
+                    transition.play();
+                Image2.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/BackC.png")));
+                TranslateTransition transition1 = new TranslateTransition(); 
+                    transition1.setDuration(Duration.millis(250));
+                    transition1.setNode(Image2);
+
+                    transition1.setToY(-200);
+                    transition1.setToX(-290);
+                    
+
+                    transition1.play();
+                Image3.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/BackC.png")));
+                TranslateTransition transition2 = new TranslateTransition(); 
+                    transition2.setDuration(Duration.millis(300));
+                    transition2.setNode(Image3);
+
+                    transition2.setToY(-245);
+                    transition2.setToX(-17.5);
+
+                    transition2.play();
+                Image4.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/BackC.png")));
+                TranslateTransition transition4 = new TranslateTransition(); 
+                    transition4.setDuration(Duration.millis(350));
+                    transition4.setNode(Image4);
+
+                    transition4.setToY(-200);
+                    transition4.setToX(255);
+
+                    transition4.play();
+                Image5.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/BackC.png")));
+                TranslateTransition transition5 = new TranslateTransition(); 
+                    transition5.setDuration(Duration.millis(400));
+                    transition5.setNode(Image5);
+
+                    transition5.setToY(-5);
+                    transition5.setToX(300);
+
+                    transition5.play();
+                Image6.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/BackC.png")));
+                TranslateTransition transition6 = new TranslateTransition(); 
+                    transition6.setDuration(Duration.millis(600));
+                    transition6.setNode(Image6);
+
+                    transition6.setToY(-30);
+                    transition6.setToX(-295);
+
+                    transition6.play();
+                Image7.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/BackC.png")));
+                TranslateTransition transition7 = new TranslateTransition(); 
+                    transition7.setDuration(Duration.millis(650));
+                    transition7.setNode(Image7);
+
+                    transition7.setToY(-220);
+                    transition7.setToX(-255);
+
+                    transition7.play();
+                Image8.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/BackC.png")));
+                TranslateTransition transition8 = new TranslateTransition(); 
+                    transition8.setDuration(Duration.millis(700));
+                    transition8.setNode(Image8);
+
+                    transition8.setToY(-245);
+                    transition8.setToX(17.5);
+
+                    transition8.play();
+                Image9.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/BackC.png")));
+                TranslateTransition transition9 = new TranslateTransition(); 
+                    transition9.setDuration(Duration.millis(750));
+                    transition9.setNode(Image9);
+
+                    transition9.setToY(-190);
+                    transition9.setToX(290);
+
+                    transition9.play();
+                Image10.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/BackC.png")));
+                TranslateTransition transition10 = new TranslateTransition(); 
+                    transition10.setDuration(Duration.millis(800));
+                    transition10.setNode(Image10);
+
+                    transition10.setToY(20);
+                    transition10.setToX(270);
+
+                    transition10.play();
+            }
         }
         
         public void FdownCards(int player)
