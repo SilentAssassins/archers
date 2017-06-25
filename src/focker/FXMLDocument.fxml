@@ -7,6 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -21,33 +22,56 @@
       </ImageView>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
-            <Button fx:id="raise" layoutX="515.0" layoutY="626.0" mnemonicParsing="false" onAction="#FdownCards" text="Show only me">
+
+            <Button fx:id="raise" layoutX="684.0" layoutY="626.0" mnemonicParsing="false" onAction="#FdownCards" style="-fx-background-color: #ff0000; -fx-background-radius: 22; -fx-text-fill: #ffffff;" text="Show only me">
+
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="call" layoutX="378.0" layoutY="626.0" mnemonicParsing="false" onAction="#BeginButton" text="CALL">
+            <Button fx:id="call" layoutX="528.0" layoutY="626.0" mnemonicParsing="false" onAction="#BeginButton" style="-fx-background-color: #42668a; -fx-background-radius: 20; -fx-text-fill: #ffffff;" text="CALL">
+
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <ImageView fx:id="Image1" fitHeight="70.0" fitWidth="51.0" layoutX="465.0" layoutY="452.0" pickOnBounds="true" preserveRatio="true" rotate="-118.6" />
-            <ImageView fx:id="Image2" fitHeight="70.0" fitWidth="51.0" layoutX="465.0" layoutY="452.0" pickOnBounds="true" preserveRatio="true" rotate="-42.0" />
-            <ImageView fx:id="Image3" fitHeight="70.0" fitWidth="51.0" layoutX="465.0" layoutY="452.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="Image4" fitHeight="70.0" fitWidth="51.0" layoutX="465.0" layoutY="452.0" pickOnBounds="true" preserveRatio="true" rotate="45.0" />
-            <ImageView fx:id="Image5" fitHeight="70.0" fitWidth="51.0" layoutX="465.0" layoutY="452.0" pickOnBounds="true" preserveRatio="true" rotate="120.3" />
-            <ImageView fx:id="Image6" fitHeight="70.0" fitWidth="51.0" layoutX="465.0" layoutY="452.0" pickOnBounds="true" preserveRatio="true" rotate="-118.6" />
-            <ImageView fx:id="Image7" fitHeight="70.0" fitWidth="51.0" layoutX="465.0" layoutY="452.0" pickOnBounds="true" preserveRatio="true" rotate="-40.6" />
-            <ImageView fx:id="Image8" fitHeight="70.0" fitWidth="51.0" layoutX="465.0" layoutY="452.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="Image9" fitHeight="70.0" fitWidth="51.0" layoutX="465.0" layoutY="452.0" pickOnBounds="true" preserveRatio="true" rotate="45.0" />
-            <ImageView fx:id="Image10" fitHeight="70.0" fitWidth="51.0" layoutX="465.0" layoutY="452.0" pickOnBounds="true" preserveRatio="true" rotate="119.1" />
+            <Button fx:id="show" layoutX="605.0" layoutY="626.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="27.0" prefWidth="63.0" style="-fx-background-color: #0000CD; -fx-background-radius: 22; -fx-text-fill: #ffffff;" text="Show">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <ImageView fx:id="Image1" fitHeight="42.0" fitWidth="30.0" layoutX="465.0" layoutY="452.0" pickOnBounds="true" preserveRatio="true" rotate="-118.6" />
+            <ImageView fx:id="Image2" fitHeight="42.0" fitWidth="30.0" layoutX="465.0" layoutY="452.0" pickOnBounds="true" preserveRatio="true" rotate="-42.0" />
+            <ImageView fx:id="Image3" fitHeight="42.0" fitWidth="30.0" layoutX="465.0" layoutY="452.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="Image4" fitHeight="42.0" fitWidth="30.0" layoutX="465.0" layoutY="452.0" pickOnBounds="true" preserveRatio="true" rotate="45.0" />
+            <ImageView fx:id="Image5" fitHeight="42.0" fitWidth="30.0" layoutX="465.0" layoutY="452.0" pickOnBounds="true" preserveRatio="true" rotate="120.3" />
+            <ImageView fx:id="Image6" fitHeight="42.0" fitWidth="30.0" layoutX="465.0" layoutY="452.0" pickOnBounds="true" preserveRatio="true" rotate="-118.6" />
+            <ImageView fx:id="Image7" fitHeight="42.0" fitWidth="30.0" layoutX="465.0" layoutY="452.0" pickOnBounds="true" preserveRatio="true" rotate="-40.6" />
+            <ImageView fx:id="Image8" fitHeight="42.0" fitWidth="30.0" layoutX="465.0" layoutY="452.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="Image9" fitHeight="42.0" fitWidth="30.0" layoutX="465.0" layoutY="452.0" pickOnBounds="true" preserveRatio="true" rotate="45.0" />
+            <ImageView fx:id="Image10" fitHeight="42.0" fitWidth="30.0" layoutX="465.0" layoutY="452.0" pickOnBounds="true" preserveRatio="true" rotate="119.1" />
             
             <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="456.0" layoutY="279.0" pickOnBounds="true" preserveRatio="true" />
-            <Button fx:id="show" layoutX="440.0" layoutY="626.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="27.0" prefWidth="63.0" text="Show">
+            <ImageView fx:id="Image01" fitHeight="87.0" fitWidth="63.0" layoutX="110.0" layoutY="576.0" pickOnBounds="true" preserveRatio="true">
+               <effect>
+                  <DropShadow />
+               </effect>
+
                <cursor>
-                  <Cursor fx:constant="HAND" />
+                  <Cursor fx:constant="OPEN_HAND" />
                </cursor>
-            </Button>
+            </ImageView>
+            <ImageView fx:id="Image02" fitHeight="87.0" fitWidth="63.0" layoutX="186.0" layoutY="576.0" pickOnBounds="true" preserveRatio="true">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="Image03" fitHeight="87.0" fitWidth="63.0" layoutX="249.0" layoutY="576.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="Image04" fitHeight="87.0" fitWidth="63.0" layoutX="306.0" layoutY="576.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="Image05" fitHeight="87.0" fitWidth="63.0" layoutX="338.0" layoutY="576.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </AnchorPane>
    </children>
