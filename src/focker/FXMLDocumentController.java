@@ -73,7 +73,9 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private Button call;
     @FXML
-    private StackPane gameboard;
+    private ImageView gameboard;
+    @FXML
+    private Button show;
     
     @FXML
     public  void handleButtonAction(ActionEvent event) throws IOException {
@@ -82,6 +84,7 @@ public class FXMLDocumentController implements Initializable {
         crd.CardSelect();
         
     }
+    @FXML
     public void FdownCards(ActionEvent event) throws FileNotFoundException
     {
         Cards1 crd1 = new Cards1();
@@ -94,6 +97,7 @@ public class FXMLDocumentController implements Initializable {
         crd.Dealer();
     }
     
+    @FXML
     public void BeginButton(ActionEvent event) throws FileNotFoundException
     {
         Cards1 big = new Cards1();

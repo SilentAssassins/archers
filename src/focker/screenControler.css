@@ -16,167 +16,130 @@ and open the template in the editor.
     -fx-background-position: left top, center;
     -fx-background-repeat: no-repeat;
     -fx-background-size: cover, auto;
+    -fx-effect:dropshadow( three-pass-box , black, 30, 0.5, 0, 0);
+} 
+
+.button{
+  -fx-padding: 8 15 15 15;
+    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;
+    -fx-background-radius: 8;
+    -fx-background-color: 
+        linear-gradient(from 0% 93% to 0% 100%, #a34313 0%, #903b12 100%),
+        #a34313,
+        #c54e2c,
+        radial-gradient(center 50% 50%, radius 100%, #d86e3a, #c54e2c);
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );   
+}
+.button:hover{
+    -fx-background-color: 
+        linear-gradient(from 0% 93% to 0% 100%, #a34313 0%, #903b12 100%),
+        #9d4024,
+        #d86e3a,
+        radial-gradient(center 50% 50%, radius 100%, #ea7f4b, #c54e2c);
+}
+.button:pressed{
+    -fx-padding: 10 15 13 15;
+    -fx-background-insets: 2 0 0 0,2 0 3 0,2 0 4 0,2 0 5 0;
+}
+.button text{
+     -fx-effect:dropshadow( three-pass-box , black, 30, 0.5, 0, 0);
+}
+#playmenu_loginpane{
+        -fx-border-color:#ff0000;
+        -fx-border-width: 4;
+        -fx-padding: 10;
+        -fx-spacing: 8;
+        -fx-border-radius: 30;
+}
+#playmenu_registerpane{
+        -fx-border-color:#ff0000;
+        -fx-border-width: 4;
+        -fx-padding: 10;
+        -fx-spacing: 8;
+        -fx-border-radius: 30;
+}
+/*setting screen  styles*/
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-opacity: 0;
 }
 
-/*Main menu play button*/  
-#main_btn_play {
-    -fx-padding: 8 15 15 15;
-    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;
-    -fx-background-radius: 8;
+.tab-pane
+{
+    -fx-tab-min-width:200px;
+    /*-fx-tab-max-width:200px;*/
+    -fx-tab-max-height:200px;
+}
+
+.tab{
+    -fx-background-insets: 0 1 0 1,0,0;
+}
+.tab-pane .tab
+{
     -fx-background-color: 
         linear-gradient(from 0% 93% to 0% 100%, #a34313 0%, #903b12 100%),
         #a34313,
         #c54e2c,
         radial-gradient(center 50% 50%, radius 100%, #d86e3a, #c54e2c);
-    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );   
+    -fx-font-family:Elektron;
+    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;
+/*      -fx-padding: 7 12 10 12;*/
+    -fx-padding: 5 10 18 10;
+    -fx-background-radius: 6;
 }
-#main_btn_play:hover {
-    -fx-background-color: 
+
+.tab-pane .tab:selected
+{
+   -fx-background-color: 
         linear-gradient(from 0% 93% to 0% 100%, #a34313 0%, #903b12 100%),
-        #9d4024,
-        #d86e3a,
+        coral,
+        chocolate,
         radial-gradient(center 50% 50%, radius 100%, #ea7f4b, #c54e2c);
-}
-#main_btn_play:pressed{
-    -fx-padding: 10 15 13 15;
+/*     -fx-padding: 10 15 13 15;*/
+    -fx-padding: 7 12 10 12;
     -fx-background-insets: 2 0 0 0,2 0 3 0,2 0 4 0,2 0 5 0;
 }
 
-/*Main menu settings button */
-#main_btn_settings{
-    -fx-padding: 8 15 15 15;
-    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;
-    -fx-background-radius: 8;
-    -fx-background-color: 
-        linear-gradient(from 0% 93% to 0% 100%, #a34313 0%, #903b12 100%),
-        #a34313,
-        #c54e2c,
-        radial-gradient(center 50% 50%, radius 100%, #d86e3a, #c54e2c);
-    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );
+.tab .tab-label { 
+    -fx-alignment: CENTER;
+    -fx-text-fill: #360f0f;
+    -fx-font-size: 25px;
+    -fx-font-weight: bold;
 }
-#main_btn_settings:hover {
-    -fx-background-color: 
-        linear-gradient(from 0% 93% to 0% 100%, #a34313 0%, #903b12 100%),
-        #9d4024,
-        #d86e3a,
-        radial-gradient(center 50% 50%, radius 100%, #ea7f4b, #c54e2c);
+
+.tab:selected .tab-label { 
+    -fx-alignment: CENTER;
+    -fx-text-fill: #360f0f;
 }
-#main_btn_settings:pressed{
-    -fx-padding: 10 15 13 15;
-    -fx-background-insets: 2 0 0 0,2 0 3 0,2 0 4 0,2 0 5 0;
+.tab-content-area 
+{
+    -fx-background-color:transparent;
+        -fx-padding: 5;
+        -fx-spacing: 8;
 }
-/*Main menu score button */
-#main_btn_score {
-   -fx-padding: 8 15 15 15;
-    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;
-    -fx-background-radius: 8;
-    -fx-background-color: 
-        linear-gradient(from 0% 93% to 0% 100%, #a34313 0%, #903b12 100%),
-        #a34313,
-        #c54e2c,
-        radial-gradient(center 50% 50%, radius 100%, #d86e3a, #c54e2c);
-    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );
+#settings_personal_nick_name{
+    -fx-border-color:#ff0000;
+        -fx-border-width: 4;
+        -fx-padding: 10;
+        -fx-spacing: 8;
+        -fx-border-radius: 30;   
 }
-#main_btn_score:hover {
-    -fx-background-color: 
-        linear-gradient(from 0% 93% to 0% 100%, #a34313 0%, #903b12 100%),
-        #9d4024,
-        #d86e3a,
-        radial-gradient(center 50% 50%, radius 100%, #ea7f4b, #c54e2c);
+#settings_personal_change_pwd{
+   -fx-border-color:#ff0000;
+        -fx-border-width: 4;
+        -fx-padding: 10;
+        -fx-spacing: 8;
+        -fx-border-radius: 30;   
 }
-#main_btn_score:pressed{
-    -fx-padding: 10 15 13 15;
-    -fx-background-insets: 2 0 0 0,2 0 3 0,2 0 4 0,2 0 5 0;
+#settings_personal_change_propic{
+  -fx-border-color:#ff0000;
+        -fx-border-width: 4;
+        -fx-padding: 10;
+        -fx-spacing: 8;
+        -fx-border-radius: 30;    
 }
-/*Main menu exit button */
-#main_btn_exit{
-   -fx-padding: 8 15 15 15;
-    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;
-    -fx-background-radius: 8;
-    -fx-background-color: 
-        linear-gradient(from 0% 93% to 0% 100%, #a34313 0%, #903b12 100%),
-        #a34313,
-        #c54e2c,
-        radial-gradient(center 50% 50%, radius 100%, #d86e3a, #c54e2c);
-    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );
-}
-#main_btn_exit:hover {
-    -fx-background-color: 
-        linear-gradient(from 0% 93% to 0% 100%, #a34313 0%, #903b12 100%),
-        #9d4024,
-        #d86e3a,
-        radial-gradient(center 50% 50%, radius 100%, #ea7f4b, #c54e2c);
-}
-#main_btn_exit:pressed{
-    -fx-padding: 10 15 13 15;
-    -fx-background-insets: 2 0 0 0,2 0 3 0,2 0 4 0,2 0 5 0;
-}
-/*play menu login button*/
-#play_menu_login{
-   -fx-padding: 8 15 15 15;
-    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;
-    -fx-background-radius: 8;
-    -fx-background-color: 
-        linear-gradient(from 0% 93% to 0% 100%, #a34313 0%, #903b12 100%),
-        #a34313,
-        #c54e2c,
-        radial-gradient(center 50% 50%, radius 100%, #d86e3a, #c54e2c);
-    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );
-}
-#play_menu_login:hover {
-    -fx-background-color: 
-        linear-gradient(from 0% 93% to 0% 100%, #a34313 0%, #903b12 100%),
-        #9d4024,
-        #d86e3a,
-        radial-gradient(center 50% 50%, radius 100%, #ea7f4b, #c54e2c);
-}
-#play_menu_login:pressed{
-    -fx-padding: 10 15 13 15;
-    -fx-background-insets: 2 0 0 0,2 0 3 0,2 0 4 0,2 0 5 0;
-}
-/*play menu sign up */
-#play_menu_signup{
-   -fx-padding: 8 15 15 15;
-    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;
-    -fx-background-radius: 8;
-    -fx-background-color: 
-        linear-gradient(from 0% 93% to 0% 100%, #a34313 0%, #903b12 100%),
-        #a34313,
-        #c54e2c,
-        radial-gradient(center 50% 50%, radius 100%, #d86e3a, #c54e2c);
-    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );
-}
-#play_menu_signup:hover {
-    -fx-background-color: 
-        linear-gradient(from 0% 93% to 0% 100%, #a34313 0%, #903b12 100%),
-        #9d4024,
-        #d86e3a,
-        radial-gradient(center 50% 50%, radius 100%, #ea7f4b, #c54e2c);
-}
-#play_menu_signup:pressed{
-    -fx-padding: 10 15 13 15;
-    -fx-background-insets: 2 0 0 0,2 0 3 0,2 0 4 0,2 0 5 0;
-}
-/*play menu back*/
-#play_menu_back{
-   -fx-padding: 8 15 15 15;
-    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;
-    -fx-background-radius: 8;
-    -fx-background-color: 
-        linear-gradient(from 0% 93% to 0% 100%, #a34313 0%, #903b12 100%),
-        #a34313,
-        #c54e2c,
-        radial-gradient(center 50% 50%, radius 100%, #d86e3a, #c54e2c);
-    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );
-}
-#play_menu_back:hover {
-    -fx-background-color: 
-        linear-gradient(from 0% 93% to 0% 100%, #a34313 0%, #903b12 100%),
-        #9d4024,
-        #d86e3a,
-        radial-gradient(center 50% 50%, radius 100%, #ea7f4b, #c54e2c);
-}
-#play_menu_back:pressed{
-    -fx-padding: 10 15 13 15;
-    -fx-background-insets: 2 0 0 0,2 0 3 0,2 0 4 0,2 0 5 0;
+#gameboard{
+   -fx-background-repeat: stretch;
+   -fx-background-position:center center;
+   -fx-effect: dropshadow(three-pass-box,black,300.5,0,0);
 }

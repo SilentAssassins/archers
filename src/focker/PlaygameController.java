@@ -5,18 +5,18 @@
  */
 package focker;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 
 /**
  * FXML Controller class
@@ -27,6 +27,18 @@ public class PlaygameController implements Initializable {
 
     @FXML
     private AnchorPane playbtnscreen;
+    @FXML
+    private Button play_menu_login;
+    @FXML
+    private Button play_menu_signup;
+    @FXML
+    private Button play_menu_back;
+    @FXML
+    private Button play_menu_play;
+    @FXML
+    private Pane playmenu_loginpane;
+    @FXML
+    private Pane playmenu_registerpane;
     /**
      * Initializes the controller class.
      */
@@ -38,16 +50,16 @@ public class PlaygameController implements Initializable {
     Scene scene = new Scene(root);
 
     @FXML
-    private void LoginBtn_cliked(ActionEvent event)throws Exception{   
-    AnchorPane pane =FXMLLoader.load(getClass().getResource("login.fxml"));
-    playbtnscreen.getChildren().setAll(pane);
-        
+    private void LoginBtn_cliked(ActionEvent event)throws Exception{
+       playmenu_loginpane.setVisible(true);
+       playmenu_registerpane.setVisible(false);
     }
 
     @FXML
     private void btnSignup_clicked(ActionEvent event)throws Exception {
-        AnchorPane pane =FXMLLoader.load(getClass().getResource("sign_up.fxml"));
-         playbtnscreen.getChildren().setAll(pane);
+         playmenu_registerpane.setVisible(true);
+         playmenu_loginpane.setVisible(false);
+
     }
 
     @FXML
@@ -55,4 +67,16 @@ public class PlaygameController implements Initializable {
         AnchorPane pane =FXMLLoader.load(getClass().getResource("main_menu.fxml"));
          playbtnscreen.getChildren().setAll(pane);
     } 
+
+    @FXML
+    private void btnPlay_cliked(ActionEvent event)throws Exception{   
+    StackPane pane =FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+    playbtnscreen.getChildren().setAll(pane);
+    }
+
+    @FXML
+    private void btnRegisted_clicked(ActionEvent event) {
+        playmenu_registerpane.setVisible(false);
+      
+    }
 }

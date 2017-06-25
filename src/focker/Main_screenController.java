@@ -29,6 +29,7 @@ public class Main_screenController implements Initializable {
         
          String css = Focker.class.getResource("screenControler.css").toExternalForm();
          rootScreen.getStylesheets().add(css); 
+          
      }      
     
    

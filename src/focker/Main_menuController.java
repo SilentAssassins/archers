@@ -17,6 +17,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TabPane;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -58,22 +59,19 @@ public class Main_menuController implements Initializable {
     menuscreen.getChildren().setAll(pane);
     }
  
-          private void loadScreen(){
-        
-        try {
-            
-            Focker.isSplashLoaded = true ;
-                    
-                    
+    private void loadScreen(){ 
+
+       try {  
+            Focker.isSplashLoaded = true ;        
             AnchorPane pane =FXMLLoader.load(getClass().getResource("main_screen.fxml"));
             menuscreen.getChildren().setAll(pane);
             
-            FadeTransition fadein= new FadeTransition(javafx.util.Duration.seconds(5), pane);
+            FadeTransition fadein= new FadeTransition(javafx.util.Duration.seconds(1), pane);
             fadein.setFromValue(0);
             fadein.setToValue(1);
             fadein.setCycleCount(1);
             
-            FadeTransition fadeout= new FadeTransition(javafx.util.Duration.seconds(5), pane);
+            FadeTransition fadeout= new FadeTransition(javafx.util.Duration.seconds(1), pane);
             fadeout.setFromValue(1);
             fadeout.setToValue(0);
             fadeout.setCycleCount(1);
@@ -98,30 +96,20 @@ public class Main_menuController implements Initializable {
             Logger.getLogger(Main_menuController.class.getName()).log(Level.SEVERE, null, ex);
         }
     
-    }      
-
+    }
+    
+    @FXML
+    private void btnsettings_clicked(ActionEvent event)throws Exception {
+     AnchorPane pane =FXMLLoader.load(getClass().getResource("settings_screen.fxml"));
+     menuscreen.getChildren().setAll(pane); 
+    }
+    
     @FXML
     private void btnexit_clicked(ActionEvent event)throws Exception {
 
         System.exit(0);
     }
-
-    private void btnsettings_clicked(MouseEvent event)throws Exception {
-    AnchorPane pane =FXMLLoader.load(getClass().getResource("settings_screen.fxml"));
-    menuscreen.getChildren().setAll(pane);  
-    }  
-
-    @FXML
-    private void btnsettings_clicked(ActionEvent event) {
-    }
-
-    @FXML
-    private void btnsettings_clicked(KeyEvent event) {
-    }
-
- 
 }
-
 
 
     
