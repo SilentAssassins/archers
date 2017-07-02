@@ -25,7 +25,7 @@ public class Focker extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         
-                //audio playing with loop 
+//                audio playing with loop 
 //        MediaPlayer musicplayer;
 //        Media mp3MusicFile = new Media(getClass().getResource("/focker/res/audio/").toExternalForm()); 
 //
