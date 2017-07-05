@@ -16,13 +16,17 @@ import java.util.Random;
 import java.util.ResourceBundle;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.util.Duration;
+import sun.plugin.javascript.navig.Anchor;
 
 /**
  *
@@ -47,6 +51,11 @@ public class FXMLDocumentController implements Initializable {
     public static String player03[] = new String[3];
     public static String player04[] = new String[3];
     public static String player05[] = new String[3];
+    
+    @FXML
+    private ImageView gameboard;
+    @FXML
+    private AnchorPane ChangeAnchor;
     
     @FXML
     private ImageView Image1;
@@ -98,6 +107,16 @@ public class FXMLDocumentController implements Initializable {
     private ImageView Image24;
     @FXML
     private ImageView Image25;
+    @FXML
+    private ImageView Image26;
+    @FXML
+    private ImageView Image27;
+    @FXML
+    private ImageView Image28;
+    @FXML
+    private ImageView Image29;
+    @FXML
+    private ImageView Image30;
     
     
     @FXML
@@ -115,8 +134,8 @@ public class FXMLDocumentController implements Initializable {
     private Button raise;
     @FXML
     private Button call;
-    @FXML
-    private ImageView gameboard;
+    
+    
     @FXML
     private Button show;
     
@@ -124,7 +143,7 @@ public class FXMLDocumentController implements Initializable {
     public  void handleButtonAction(ActionEvent event) throws IOException {
         System.out.println("SHOW");
         Cards1 crd = new Cards1();
-        player = 3;
+        player = 2;
         crd.CardSelect(player);
         
     }
@@ -141,17 +160,40 @@ public class FXMLDocumentController implements Initializable {
         ocr.ThreeCards();
     }
     
+    @FXML
     public void ButtonDeler_Click (ActionEvent event) throws FileNotFoundException
     {
         Cards1 crd = new Cards1();
         crd.Dealer();
     }
-    
+    //@FXML
+    public void TCareds(ActionEvent event)throws FileNotFoundException
+    {
+        OtherCards or = new OtherCards();
+        or.Tcards();
+    }
 
     public void BeginButton(ActionEvent event) throws FileNotFoundException, IOException
     {
         Cards1 big = new Cards1();
         big.Begin();
+    }
+    
+    
+    public void imgClick(MouseEvent event)
+    {
+//        Image01.addEventHandler(MouseEvent.MOUSE_CLICKED, (MouseEvent event1) -> {
+            System.out.println("Tile pressed ");
+            OtherCards oor = new OtherCards();
+            oor.changeCards();
+//            event1.consume();
+//        });
+    }
+    @FXML
+    public void Change(ActionEvent event)
+    {
+        OtherCards ooro = new OtherCards();
+        ooro.change();
     }
     
     @Override
@@ -371,6 +413,10 @@ public class FXMLDocumentController implements Initializable {
                     ++i;
                     
                 }
+//            for(int g = 0;g<=28;g++)
+//            {
+//                int value = card1[i+2];
+//            }
             
             //int plyerNo = player;
             for (int m = 0; m < card1.length; m++)
@@ -402,17 +448,6 @@ public class FXMLDocumentController implements Initializable {
                 }
             }
             
-            
-            
-//            for(String st:player1)
-//            {
-//                System.out.println("player1"+st);
-//            }
-//            
-//            for(String ss:player2)
-//            {
-//                System.out.println("player2"+ss);
-//            }
         }
         
         /**
@@ -1203,6 +1238,78 @@ public class FXMLDocumentController implements Initializable {
             }
                     
         }
+        
+        public void Tcards()
+        {
+            //int plyerNo = player;
+//            for (int l=0;l<4;l++)
+//            {
+            System.out.println("Tcards");
+                Image26.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+deal1[0])));
+                TranslateTransition tran = new TranslateTransition(); 
+                tran.setDuration(Duration.millis(200));
+                tran.setNode(Image26);
+                tran.setToY(-100);
+                tran.setToX(-120);
+                tran.play();
+                Image27.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+deal1[1])));
+                TranslateTransition trans = new TranslateTransition(); 
+                trans.setDuration(Duration.millis(200));
+                trans.setNode(Image27);
+                trans.setToY(-100);
+                trans.setToX(-60);
+                trans.play();
+                Image28.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+deal1[2])));
+                TranslateTransition tra = new TranslateTransition(); 
+                tra.setDuration(Duration.millis(200));
+                tra.setNode(Image28);
+                tra.setToY(-100);
+                //tra.setToX(-35);
+                tra.play();
+                Image29.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+deal1[3])));
+                TranslateTransition tr = new TranslateTransition(); 
+                tr.setDuration(Duration.millis(200));
+                tr.setNode(Image29);
+                tr.setToY(-100);
+                tr.setToX(60);
+                tr.play();
+                Image30.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+deal1[4])));
+                TranslateTransition trx = new TranslateTransition(); 
+                trx.setDuration(Duration.millis(200));
+                trx.setNode(Image30);
+                trx.setToY(-100);
+                trx.setToX(125);
+                trx.play();
+                //gameboard.setImage(new Image(getClass().getResourceAsStream("res/Images/Background/Table.jpg")));
+//            }
+        }
+        
+        public void changeCards()
+        {
+            ChangeAnchor.setVisible(true);
+            
+            
+        }
+        
+        public void change()
+        {
+            TranslateTransition transition1 = new TranslateTransition(); 
+            transition1.setDuration(Duration.millis(250));
+            transition1.setNode(Image2);
+            transition1.setToY(0);
+            transition1.setToX(0);
+            transition1.play();
+            
+            Image2.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+deal1[0])));
+            TranslateTransition transition190 = new TranslateTransition(); 
+            transition190.setDuration(Duration.millis(250));
+            transition190.setNode(Image2);
+            transition190.setToY(-200);
+            transition190.setToX(-290);
+            transition190.play();
+        }
+        
+        
     }
     
 }

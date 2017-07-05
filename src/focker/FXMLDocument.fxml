@@ -10,7 +10,7 @@
 
 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="710.0" prefWidth="1047.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="focker.FXMLDocumentController">
    <children>
-      <ImageView fx:id="gameboard" fitHeight="722.0" fitWidth="1059.0" pickOnBounds="false" preserveRatio="false" rotate="180.0" StackPane.alignment="CENTER">
+      <ImageView fx:id="gameboard" fitHeight="722.0" fitWidth="1059.0" pickOnBounds="false" preserveRatio="false" StackPane.alignment="CENTER">
          <image>
             <Image url="@res/Images/Background/UNADJUSTEDNONRAW_thumb_582a.jpg" />
          </image>
@@ -60,7 +60,12 @@
             <ImageView fx:id="Image23" fitHeight="42.0" fitWidth="30.0" layoutX="509.0" layoutY="493.0" pickOnBounds="true" preserveRatio="true" rotate="11.3" />
             <ImageView fx:id="Image24" fitHeight="42.0" fitWidth="30.0" layoutX="509.0" layoutY="493.0" pickOnBounds="true" preserveRatio="true" rotate="65.6" />
             <ImageView fx:id="Image25" fitHeight="42.0" fitWidth="30.0" layoutX="509.0" layoutY="493.0" pickOnBounds="true" preserveRatio="true" rotate="125.0" />
-            <ImageView fx:id="Image01" fitHeight="87.0" fitWidth="63.0" layoutX="100.0" layoutY="598.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="Image26" fitHeight="63.0" fitWidth="48.0" layoutX="499.0" layoutY="472.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="Image27" fitHeight="63.0" fitWidth="48.0" layoutX="499.0" layoutY="472.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="Image28" fitHeight="63.0" fitWidth="48.0" layoutX="499.0" layoutY="472.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="Image29" fitHeight="63.0" fitWidth="48.0" layoutX="499.0" layoutY="472.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="Image30" fitHeight="63.0" fitWidth="48.0" layoutX="499.0" layoutY="472.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="Image01" fitHeight="87.0" fitWidth="63.0" layoutX="100.0" layoutY="598.0" onMouseClicked="#imgClick" pickOnBounds="true" preserveRatio="true">
                <effect>
                   <DropShadow color="#ff1111" height="80.2" radius="39.22" width="78.68" />
                </effect>
@@ -85,6 +90,16 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
+            <Button fx:id="Play" layoutX="876.0" layoutY="658.0" mnemonicParsing="false" onAction="#TCareds" style="-fx-background-color: #ff0000; -fx-background-radius: 22; -fx-text-fill: #ffffff;" text="PLAY">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="ChangeAnchor" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0,100,100,0.5);" visible="false">
+         <children>
+            <Button layoutX="487.0" layoutY="342.0" mnemonicParsing="false" onAction="#Change" style="-fx-background-color: #3CB371; -fx-text-fill: #FFFFFF; -fx-background-radius: 200;" text="CHANGE" />
          </children>
       </AnchorPane>
    </children>
