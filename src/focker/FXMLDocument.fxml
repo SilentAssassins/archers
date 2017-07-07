@@ -2,11 +2,14 @@
 
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
 
 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="710.0" prefWidth="1047.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="focker.FXMLDocumentController">
    <children>
@@ -17,24 +20,6 @@
       </ImageView>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
-
-            <Button fx:id="raise" layoutX="700.0" layoutY="658.0" mnemonicParsing="false" onAction="#FdownCards" style="-fx-background-color: #ff0000; -fx-background-radius: 22; -fx-text-fill: #ffffff;" text="FOLD &amp; SKIP">
-
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="call" layoutX="509.0" layoutY="658.0" mnemonicParsing="false" onAction="#BeginButton" prefHeight="27.0" prefWidth="77.0" style="-fx-background-color: #42668a; -fx-background-radius: 20; -fx-text-fill: #ffffff;" text="CALL">
-
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="show" layoutX="601.0" layoutY="658.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="27.0" prefWidth="84.0" style="-fx-background-color: #0000CD; -fx-background-radius: 22; -fx-text-fill: #ffffff;" text="RAISE">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
             <ImageView fx:id="Image1" fitHeight="42.0" fitWidth="30.0" layoutX="509.0" layoutY="493.0" pickOnBounds="true" preserveRatio="true" rotate="-118.6" />
             <ImageView fx:id="Image2" fitHeight="42.0" fitWidth="30.0" layoutX="509.0" layoutY="493.0" pickOnBounds="true" preserveRatio="true" rotate="-42.0" />
             <ImageView fx:id="Image3" fitHeight="42.0" fitWidth="30.0" layoutX="509.0" layoutY="493.0" pickOnBounds="true" preserveRatio="true" />
@@ -74,7 +59,7 @@
                   <Cursor fx:constant="OPEN_HAND" />
                </cursor>
             </ImageView>
-            <ImageView fx:id="Image02" fitHeight="87.0" fitWidth="63.0" layoutX="176.0" layoutY="598.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="Image02" fitHeight="87.0" fitWidth="63.0" layoutX="176.0" layoutY="598.0" onMouseClicked="#imgClick2" pickOnBounds="true" preserveRatio="true">
                <effect>
                   <DropShadow color="#ff1111" height="87.79" radius="41.875" width="81.71" />
                </effect>
@@ -82,15 +67,42 @@
                   <Cursor fx:constant="OPEN_HAND" />
                </cursor>
             </ImageView>
-            <ImageView fx:id="Image03" fitHeight="87.0" fitWidth="63.0" layoutX="251.0" layoutY="598.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="Image04" fitHeight="87.0" fitWidth="63.0" layoutX="326.0" layoutY="598.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="Image05" fitHeight="87.0" fitWidth="63.0" layoutX="401.0" layoutY="598.0" pickOnBounds="true" preserveRatio="true" />
-            <Button fx:id="bet" layoutX="815.0" layoutY="658.0" mnemonicParsing="false" onAction="#Others" style="-fx-background-color: #ff0000; -fx-background-radius: 22; -fx-text-fill: #ffffff;" text="BET">
+            <ImageView fx:id="Image03" fitHeight="87.0" fitWidth="63.0" layoutX="251.0" layoutY="598.0" onMouseClicked="#imgClick3" pickOnBounds="true" preserveRatio="true">
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor></ImageView>
+            <ImageView fx:id="Image04" fitHeight="87.0" fitWidth="63.0" layoutX="326.0" layoutY="598.0" onMouseClicked="#imgClick4" pickOnBounds="true" preserveRatio="true">
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor></ImageView>
+            <ImageView fx:id="Image05" fitHeight="87.0" fitWidth="63.0" layoutX="401.0" layoutY="598.0" onMouseClicked="#imgClick5" pickOnBounds="true" preserveRatio="true">
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor></ImageView>
+            <Button fx:id="bet" layoutX="910.0" layoutY="657.0" mnemonicParsing="false" onAction="#Others" style="-fx-background-color: #ff0000; -fx-background-radius: 22; -fx-text-fill: #ffffff;" text="BET">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="Play" layoutX="876.0" layoutY="658.0" mnemonicParsing="false" onAction="#TCareds" style="-fx-background-color: #ff0000; -fx-background-radius: 22; -fx-text-fill: #ffffff;" text="PLAY">
+
+                                                <Button fx:id="raise" layoutX="622.0" layoutY="656.0" mnemonicParsing="false" onAction="#FdownCards" style="-fx-background-color: #ff0000; -fx-background-radius: 22; -fx-text-fill: #ffffff;" text="FOLD &amp; SKIP">
+
+                                                   <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="Play" layoutX="964.0" layoutY="656.0" mnemonicParsing="false" onAction="#TCareds" style="-fx-background-color: #ff0000; -fx-background-radius: 22; -fx-text-fill: #ffffff;" text="PLAY">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="call" layoutX="823.0" layoutY="656.0" mnemonicParsing="false" onAction="#BeginButton" prefHeight="27.0" prefWidth="77.0" style="-fx-background-color: #42668a; -fx-background-radius: 20; -fx-text-fill: #ffffff;" text="CALL">
+
+                                       <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="show" layoutX="729.0" layoutY="656.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="27.0" prefWidth="84.0" style="-fx-background-color: #0000CD; -fx-background-radius: 22; -fx-text-fill: #ffffff;" text="RAISE">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -99,7 +111,35 @@
       </AnchorPane>
       <AnchorPane fx:id="ChangeAnchor" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0,100,100,0.5);" visible="false">
          <children>
-            <Button layoutX="487.0" layoutY="342.0" mnemonicParsing="false" onAction="#Change" style="-fx-background-color: #3CB371; -fx-text-fill: #FFFFFF; -fx-background-radius: 200;" text="CHANGE" />
+            <Button layoutX="350.0" layoutY="436.0" mnemonicParsing="false" onAction="#ChangeCard1" prefHeight="27.0" prefWidth="63.0" style="-fx-background-color: #3CB371; -fx-text-fill: #FFFFFF; -fx-background-radius: 200;" text="YES">
+               <font>
+                  <Font name="Assassin$" size="13.0" />
+               </font></Button>
+            <Button layoutX="650.0" layoutY="436.0" mnemonicParsing="false" onAction="#Cancel" prefHeight="27.0" prefWidth="63.0" style="-fx-background-color: #3CB371; -fx-text-fill: #FFFFFF; -fx-background-radius: 200;" text="NO">
+               <font>
+                  <Font name="Assassin$" size="13.0" />
+               </font>
+            </Button>
+            <Label layoutX="215.0" layoutY="337.0" prefHeight="37.0" prefWidth="617.0" text="Do you want to chage the current Card" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Assassin$" size="36.0" />
+               </font>
+            </Label>
+            <Label layoutX="794.0" layoutY="337.0" prefHeight="37.0" prefWidth="48.0" text="?" textFill="WHITE">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Label layoutX="498.0" layoutY="381.0" text="?">
+               <font>
+                  <Font name="Assassin$" size="67.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0,100,100,0.5);" visible="false">
+         <children>
+            <Slider layoutX="454.0" layoutY="347.0" />
          </children>
       </AnchorPane>
    </children>

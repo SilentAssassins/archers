@@ -38,7 +38,7 @@ public class Focker extends Application {
 //        musicplayer.seek(Duration.ZERO); 
 //        }});   
 
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("main_menu.fxml"));
         Scene scene = new Scene(root);
         String css = Focker.class.getResource("screenControler.css").toExternalForm();
         scene.getStylesheets().add(css);

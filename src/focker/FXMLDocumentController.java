@@ -14,9 +14,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 import java.util.ResourceBundle;
+import javafx.animation.FadeTransition;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -24,9 +24,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.StackPane;
 import javafx.util.Duration;
-import sun.plugin.javascript.navig.Anchor;
 
 /**
  *
@@ -40,6 +38,7 @@ public class FXMLDocumentController implements Initializable {
     public static int q;
     public static boolean rewrite = true;
     public static  int player;
+    public static int count = 0;
     
     public static String player1[] = new String[2];
     public static String player2[] = new String[2];
@@ -138,6 +137,10 @@ public class FXMLDocumentController implements Initializable {
     
     @FXML
     private Button show;
+    @FXML
+    private Button bet;
+    @FXML
+    private Button Play;
     
     @FXML
     public  void handleButtonAction(ActionEvent event) throws IOException {
@@ -160,19 +163,20 @@ public class FXMLDocumentController implements Initializable {
         ocr.ThreeCards();
     }
     
-    @FXML
     public void ButtonDeler_Click (ActionEvent event) throws FileNotFoundException
     {
         Cards1 crd = new Cards1();
         crd.Dealer();
     }
     //@FXML
+    @FXML
     public void TCareds(ActionEvent event)throws FileNotFoundException
     {
         OtherCards or = new OtherCards();
         or.Tcards();
     }
 
+    @FXML
     public void BeginButton(ActionEvent event) throws FileNotFoundException, IOException
     {
         Cards1 big = new Cards1();
@@ -180,6 +184,7 @@ public class FXMLDocumentController implements Initializable {
     }
     
     
+    @FXML
     public void imgClick(MouseEvent event)
     {
 //        Image01.addEventHandler(MouseEvent.MOUSE_CLICKED, (MouseEvent event1) -> {
@@ -189,11 +194,84 @@ public class FXMLDocumentController implements Initializable {
 //            event1.consume();
 //        });
     }
+    
     @FXML
-    public void Change(ActionEvent event)
+    public void imgClick2(MouseEvent event)
     {
-        OtherCards ooro = new OtherCards();
-        ooro.change();
+//        Image01.addEventHandler(MouseEvent.MOUSE_CLICKED, (MouseEvent event1) -> {
+            System.out.println("Tile pressed ");
+            OtherCards oor = new OtherCards();
+            oor.changeCards2();
+//            event1.consume();
+//        });
+    }
+    @FXML
+    public void imgClick3(MouseEvent event)
+    {
+//        Image01.addEventHandler(MouseEvent.MOUSE_CLICKED, (MouseEvent event1) -> {
+            System.out.println("Tile pressed ");
+            OtherCards oor = new OtherCards();
+            oor.changeCards3();
+//            event1.consume();
+//        });
+    }
+    
+    @FXML
+    public void imgClick4(MouseEvent event)
+    {
+//        Image01.addEventHandler(MouseEvent.MOUSE_CLICKED, (MouseEvent event1) -> {
+            System.out.println("Tile pressed ");
+            OtherCards oor = new OtherCards();
+            oor.changeCards4();
+//            event1.consume();
+//        });
+    }
+    
+    @FXML
+    public void imgClick5(MouseEvent event)
+    {
+//        Image01.addEventHandler(MouseEvent.MOUSE_CLICKED, (MouseEvent event1) -> {
+            System.out.println("Tile pressed ");
+            OtherCards oor = new OtherCards();
+            oor.changeCards5();
+//            event1.consume();
+//        });
+    }
+    
+    
+    @FXML
+    private void Cancel(ActionEvent event)
+    {
+        ChangeAnchor.setVisible(false);
+    }
+    
+    
+    @FXML
+    public void ChangeCard1(ActionEvent event)
+    {
+        switch(count)
+        {
+            case 1:
+                OtherCards ooro = new OtherCards();
+                ooro.change(1);
+                break;
+            case 2:
+                OtherCards oo0ro = new OtherCards();
+                oo0ro.change(2);
+                break;
+            case 3:
+                OtherCards o0ro = new OtherCards();
+                o0ro.change(3);
+                break;
+            case 4:
+                OtherCards l0ro = new OtherCards();
+                l0ro.change(4);
+                break;
+            case 5:
+                OtherCards og0ro = new OtherCards();
+                og0ro.change(5);
+                break;
+        }
     }
     
     @Override
@@ -678,9 +756,9 @@ public class FXMLDocumentController implements Initializable {
         {
     
             int plyerNo = player;
-            for (int m = 0; m < card1.length; m++)
-            {
-                int position1 = card1[m];
+//            for (int m = 0; m < card1.length; m++)
+//            {
+//                int position1 = card1[m];
 
                 switch(plyerNo)
                 {
@@ -739,7 +817,6 @@ public class FXMLDocumentController implements Initializable {
                     transition018.setDuration(Duration.millis(550));
                     transition018.setNode(Image18);
                     transition018.setToY(-230);
-                    //transition018.setToX(-17.5);
                     transition018.play();
                     Image19.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/BackC.png")));
                     TranslateTransition transition019 = new TranslateTransition(); 
@@ -790,6 +867,10 @@ public class FXMLDocumentController implements Initializable {
                     transition025.setToY(20);
                     transition025.setToX(250);
                     transition025.play();
+                    
+//                    ParallelTransition P1 = new ParallelTransition(transition11,transition12,transition013,transition014,transition015,transition16,transition017,transition018,transition019,transition020,transition21,transition022,transition023,transition024,transition025);
+//                    P1.play();
+                    
                     Image03.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+player01[0])));
                     Image04.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+player01[1])));
                     Image05.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+player01[2])));
@@ -849,7 +930,6 @@ public class FXMLDocumentController implements Initializable {
                     transition0018.setDuration(Duration.millis(550));
                     transition0018.setNode(Image18);
                     transition0018.setToY(-230);
-                    //transition018.setToX(-17.5);
                     transition0018.play();
                     Image19.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/BackC.png")));
                     TranslateTransition transition0019 = new TranslateTransition(); 
@@ -900,6 +980,10 @@ public class FXMLDocumentController implements Initializable {
                     transition0025.setToY(20);
                     transition0025.setToX(250);
                     transition0025.play();
+                    
+//                    ParallelTransition P2 = new ParallelTransition(transition011,transition12a,transition0013,transition0014,transition0015,transition016,transition17,transition0018,transition0019,transition0020,transition021,transition22,transition0023,transition0024,transition0025);
+//                    P2.play();
+                    
                     Image03.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+player02[0])));
                     Image04.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+player02[1])));
                     Image05.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+player02[2])));
@@ -1235,7 +1319,7 @@ public class FXMLDocumentController implements Initializable {
                     Image05.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+player05[2])));
                     break;
                 }
-            }
+//            }
                     
         }
         
@@ -1289,24 +1373,637 @@ public class FXMLDocumentController implements Initializable {
             ChangeAnchor.setVisible(true);
             
             
+            FadeTransition fadein= new FadeTransition(javafx.util.Duration.seconds(1), ChangeAnchor);
+            fadein.setFromValue(0);
+            fadein.setToValue(3);
+            fadein.setCycleCount(1);
+            fadein.play();
+            
+            count=1;
+            
+        }
+        public void changeCards2()
+        {
+            ChangeAnchor.setVisible(true);
+            
+            FadeTransition fadein= new FadeTransition(javafx.util.Duration.seconds(1), ChangeAnchor);
+            fadein.setFromValue(0);
+            fadein.setToValue(3);
+            fadein.setCycleCount(1);
+            fadein.play(); 
+            
+            count = 2;
+            
+        }
+        public void changeCards3()
+        {
+            ChangeAnchor.setVisible(true);
+            
+            FadeTransition fadein= new FadeTransition(javafx.util.Duration.seconds(1), ChangeAnchor);
+            fadein.setFromValue(0);
+            fadein.setToValue(3);
+            fadein.setCycleCount(1);
+            fadein.play(); 
+            
+            count = 3;
+            
+        }
+        public void changeCards4()
+        {
+            ChangeAnchor.setVisible(true);
+            
+            FadeTransition fadein= new FadeTransition(javafx.util.Duration.seconds(1), ChangeAnchor);
+            fadein.setFromValue(0);
+            fadein.setToValue(3);
+            fadein.setCycleCount(1);
+            fadein.play(); 
+            count = 4;
+            
+        }
+        public void changeCards5()
+        {
+            ChangeAnchor.setVisible(true);
+            
+            FadeTransition fadein= new FadeTransition(javafx.util.Duration.seconds(1), ChangeAnchor);
+            fadein.setFromValue(0);
+            fadein.setToValue(3);
+            fadein.setCycleCount(1);
+            fadein.play(); 
+            count = 5;
+            
         }
         
-        public void change()
+        public void change(int card)
         {
-            TranslateTransition transition1 = new TranslateTransition(); 
-            transition1.setDuration(Duration.millis(250));
-            transition1.setNode(Image2);
-            transition1.setToY(0);
-            transition1.setToX(0);
-            transition1.play();
             
-            Image2.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+deal1[0])));
-            TranslateTransition transition190 = new TranslateTransition(); 
-            transition190.setDuration(Duration.millis(250));
-            transition190.setNode(Image2);
-            transition190.setToY(-200);
-            transition190.setToX(-290);
-            transition190.play();
+//            Timer timer1 = new Timer();
+//            
+//            timer1.schedule(new TimerTask() {
+//                @Override
+//                public void run() {
+                    switch(player)
+                    {
+                        case 1:
+                            switch(card)
+                            {
+                                case 1:
+                                    TranslateTransition transition1 = new TranslateTransition(); 
+                                    transition1.setDuration(Duration.millis(250));
+                                    transition1.setNode(Image1);
+                                    transition1.setToY(0);
+                                    transition1.setToX(0);
+
+                                    Image1.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+deal1[0])));
+                                    Image01.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+deal1[0])));
+
+                                    transition1.setAutoReverse(true);
+                                    transition1.setCycleCount(2);
+                                    transition1.play();
+                                    ChangeAnchor.setVisible(false);
+                                    
+                                    String Value = deal1[0];
+                                    List <String> list = new ArrayList<>(Arrays.asList(deal1));
+                                    list.remove(Value);
+                                    deal1 = list.toArray(new String[0]);
+                                    break;
+                                case 2:
+                                    TranslateTransition transition2 = new TranslateTransition(); 
+                                    transition2.setDuration(Duration.millis(250));
+                                    transition2.setNode(Image6);
+                                    transition2.setToY(0);
+                                    transition2.setToX(0);
+
+                                    Image6.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+deal1[0])));
+                                    Image02.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+deal1[0])));
+
+                                    transition2.setAutoReverse(true);
+                                    transition2.setCycleCount(2);
+                                    transition2.play();
+                                    
+                                    ChangeAnchor.setVisible(false);
+                                    
+                                    String Value2 = deal1[0];
+                                    List <String> list2 = new ArrayList<>(Arrays.asList(deal1));
+                                    list2.remove(Value2);
+                                    deal1 = list2.toArray(new String[0]);
+                                    break;
+                                case 3:
+                                    TranslateTransition transition3 = new TranslateTransition(); 
+                                    transition3.setDuration(Duration.millis(250));
+                                    transition3.setNode(Image11);
+                                    transition3.setToY(0);
+                                    transition3.setToX(0);
+
+                                    Image11.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+deal1[0])));
+                                    Image03.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+deal1[0])));
+
+                                    transition3.setAutoReverse(true);
+                                    transition3.setCycleCount(2);
+                                    transition3.play();
+                                    
+                                    ChangeAnchor.setVisible(false);
+                                    
+                                    String Value3 = deal1[0];
+                                    List <String> list3 = new ArrayList<>(Arrays.asList(deal1));
+                                    list3.remove(Value3);
+                                    deal1 = list3.toArray(new String[0]);
+                                    break;
+                                case 4:
+                                    TranslateTransition transition4 = new TranslateTransition(); 
+                                    transition4.setDuration(Duration.millis(250));
+                                    transition4.setNode(Image16);
+                                    transition4.setToY(0);
+                                    transition4.setToX(0);
+
+                                    Image16.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+deal1[0])));
+                                    Image04.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+deal1[0])));
+
+                                    transition4.setAutoReverse(true);
+                                    transition4.setCycleCount(2);
+                                    transition4.play();
+                                    
+                                    ChangeAnchor.setVisible(false);
+                                    
+                                    String Value4 = deal1[0];
+                                    List <String> list4 = new ArrayList<>(Arrays.asList(deal1));
+                                    list4.remove(Value4);
+                                    deal1 = list4.toArray(new String[0]);
+                                    break;
+                                case 5:
+                                    TranslateTransition transition5 = new TranslateTransition(); 
+                                    transition5.setDuration(Duration.millis(250));
+                                    transition5.setNode(Image21);
+                                    transition5.setToY(0);
+                                    transition5.setToX(0);
+
+                                    Image21.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+deal1[0])));
+                                    Image05.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+deal1[0])));
+
+                                    transition5.setAutoReverse(true);
+                                    transition5.setCycleCount(2);
+                                    transition5.play();
+                                    
+                                    ChangeAnchor.setVisible(false);
+                                    
+                                    String Value5 = deal1[0];
+                                    List <String> list5 = new ArrayList<>(Arrays.asList(deal1));
+                                    list5.remove(Value5);
+                                    deal1 = list5.toArray(new String[0]);
+                                    break;
+                            }
+                            break;
+                        case 2:
+                            switch(card)
+                            {
+                                case 1:
+                                    TranslateTransition transition1 = new TranslateTransition(); 
+                                    transition1.setDuration(Duration.millis(250));
+                                    transition1.setNode(Image2);
+                                    transition1.setToY(0);
+                                    transition1.setToX(0);
+
+                                    Image2.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+deal1[0])));
+                                    Image01.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+deal1[0])));
+
+                                    transition1.setAutoReverse(true);
+                                    transition1.setCycleCount(2);
+                                    transition1.play();
+                                    ChangeAnchor.setVisible(false);
+                                    
+                                    String Value = deal1[0];
+                                    List <String> list = new ArrayList<>(Arrays.asList(deal1));
+                                    list.remove(Value);
+                                    deal1 = list.toArray(new String[0]);
+                                    break;
+                                case 2:
+                                    TranslateTransition transition2 = new TranslateTransition(); 
+                                    transition2.setDuration(Duration.millis(250));
+                                    transition2.setNode(Image7);
+                                    transition2.setToY(0);
+                                    transition2.setToX(0);
+
+                                    Image7.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+deal1[0])));
+                                    Image02.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+deal1[0])));
+
+                                    transition2.setAutoReverse(true);
+                                    transition2.setCycleCount(2);
+                                    transition2.play();
+                                    
+                                    ChangeAnchor.setVisible(false);
+                                    
+                                    String Value2 = deal1[0];
+                                    List <String> list2 = new ArrayList<>(Arrays.asList(deal1));
+                                    list2.remove(Value2);
+                                    deal1 = list2.toArray(new String[0]);
+                                    break;
+                                case 3:
+                                    TranslateTransition transition3 = new TranslateTransition(); 
+                                    transition3.setDuration(Duration.millis(250));
+                                    transition3.setNode(Image12);
+                                    transition3.setToY(0);
+                                    transition3.setToX(0);
+
+                                    Image12.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+deal1[0])));
+                                    Image03.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+deal1[0])));
+
+                                    transition3.setAutoReverse(true);
+                                    transition3.setCycleCount(2);
+                                    transition3.play();
+                                    
+                                    ChangeAnchor.setVisible(false);
+                                    
+                                    String Value3 = deal1[0];
+                                    List <String> list3 = new ArrayList<>(Arrays.asList(deal1));
+                                    list3.remove(Value3);
+                                    deal1 = list3.toArray(new String[0]);
+                                    break;
+                                case 4:
+                                    TranslateTransition transition4 = new TranslateTransition(); 
+                                    transition4.setDuration(Duration.millis(250));
+                                    transition4.setNode(Image17);
+                                    transition4.setToY(0);
+                                    transition4.setToX(0);
+
+                                    Image17.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+deal1[0])));
+                                    Image04.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+deal1[0])));
+
+                                    transition4.setAutoReverse(true);
+                                    transition4.setCycleCount(2);
+                                    transition4.play();
+                                    
+                                    ChangeAnchor.setVisible(false);
+                                    
+                                    String Value4 = deal1[0];
+                                    List <String> list4 = new ArrayList<>(Arrays.asList(deal1));
+                                    list4.remove(Value4);
+                                    deal1 = list4.toArray(new String[0]);
+                                    break;
+                                case 5:
+                                    TranslateTransition transition5 = new TranslateTransition(); 
+                                    transition5.setDuration(Duration.millis(250));
+                                    transition5.setNode(Image22);
+                                    transition5.setToY(0);
+                                    transition5.setToX(0);
+
+                                    Image22.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+deal1[0])));
+                                    Image05.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+deal1[0])));
+
+                                    transition5.setAutoReverse(true);
+                                    transition5.setCycleCount(2);
+                                    transition5.play();
+                                    
+                                    ChangeAnchor.setVisible(false);
+                                    
+                                    String Value5 = deal1[0];
+                                    List <String> list5 = new ArrayList<>(Arrays.asList(deal1));
+                                    list5.remove(Value5);
+                                    deal1 = list5.toArray(new String[0]);
+                                    break;
+                            }
+                            break;
+                        case 3:
+                            switch(card)
+                            {
+                                case 1:
+                                    TranslateTransition transition1 = new TranslateTransition(); 
+                                    transition1.setDuration(Duration.millis(250));
+                                    transition1.setNode(Image3);
+                                    transition1.setToY(0);
+                                    transition1.setToX(0);
+
+                                    Image3.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+deal1[0])));
+                                    Image01.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+deal1[0])));
+
+                                    transition1.setAutoReverse(true);
+                                    transition1.setCycleCount(2);
+                                    transition1.play();
+                                    ChangeAnchor.setVisible(false);
+                                    
+                                    String Value = deal1[0];
+                                    List <String> list = new ArrayList<>(Arrays.asList(deal1));
+                                    list.remove(Value);
+                                    deal1 = list.toArray(new String[0]);
+                                    break;
+                                case 2:
+                                    TranslateTransition transition2 = new TranslateTransition(); 
+                                    transition2.setDuration(Duration.millis(250));
+                                    transition2.setNode(Image8);
+                                    transition2.setToY(0);
+                                    transition2.setToX(0);
+
+                                    Image8.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+deal1[0])));
+                                    Image02.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+deal1[0])));
+
+                                    transition2.setAutoReverse(true);
+                                    transition2.setCycleCount(2);
+                                    transition2.play();
+                                    
+                                    ChangeAnchor.setVisible(false);
+                                    
+                                    String Value2 = deal1[0];
+                                    List <String> list2 = new ArrayList<>(Arrays.asList(deal1));
+                                    list2.remove(Value2);
+                                    deal1 = list2.toArray(new String[0]);
+                                    break;
+                                case 3:
+                                    TranslateTransition transition3 = new TranslateTransition(); 
+                                    transition3.setDuration(Duration.millis(250));
+                                    transition3.setNode(Image13);
+                                    transition3.setToY(0);
+                                    transition3.setToX(0);
+
+                                    Image13.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+deal1[0])));
+                                    Image03.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+deal1[0])));
+
+                                    transition3.setAutoReverse(true);
+                                    transition3.setCycleCount(2);
+                                    transition3.play();
+                                    
+                                    ChangeAnchor.setVisible(false);
+                                    
+                                    String Value3 = deal1[0];
+                                    List <String> list3 = new ArrayList<>(Arrays.asList(deal1));
+                                    list3.remove(Value3);
+                                    deal1 = list3.toArray(new String[0]);
+                                    break;
+                                case 4:
+                                    TranslateTransition transition4 = new TranslateTransition(); 
+                                    transition4.setDuration(Duration.millis(250));
+                                    transition4.setNode(Image18);
+                                    transition4.setToY(0);
+                                    transition4.setToX(0);
+
+                                    Image18.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+deal1[0])));
+                                    Image04.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+deal1[0])));
+
+                                    transition4.setAutoReverse(true);
+                                    transition4.setCycleCount(2);
+                                    transition4.play();
+                                    
+                                    ChangeAnchor.setVisible(false);
+                                    
+                                    String Value4 = deal1[0];
+                                    List <String> list4 = new ArrayList<>(Arrays.asList(deal1));
+                                    list4.remove(Value4);
+                                    deal1 = list4.toArray(new String[0]);
+                                    break;
+                                case 5:
+                                    TranslateTransition transition5 = new TranslateTransition(); 
+                                    transition5.setDuration(Duration.millis(250));
+                                    transition5.setNode(Image23);
+                                    transition5.setToY(0);
+                                    transition5.setToX(0);
+
+                                    Image23.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+deal1[0])));
+                                    Image05.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+deal1[0])));
+
+                                    transition5.setAutoReverse(true);
+                                    transition5.setCycleCount(2);
+                                    transition5.play();
+                                    
+                                    ChangeAnchor.setVisible(false);
+                                    
+                                    String Value5 = deal1[0];
+                                    List <String> list5 = new ArrayList<>(Arrays.asList(deal1));
+                                    list5.remove(Value5);
+                                    deal1 = list5.toArray(new String[0]);
+                                    break;
+                            }
+                            break;
+                        case 4:
+                            switch(card)
+                            {
+                                case 1:
+                                    TranslateTransition transition1 = new TranslateTransition(); 
+                                    transition1.setDuration(Duration.millis(250));
+                                    transition1.setNode(Image4);
+                                    transition1.setToY(0);
+                                    transition1.setToX(0);
+
+                                    Image4.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+deal1[0])));
+                                    Image01.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+deal1[0])));
+
+                                    transition1.setAutoReverse(true);
+                                    transition1.setCycleCount(2);
+                                    transition1.play();
+                                    ChangeAnchor.setVisible(false);
+                                    
+                                    String Value = deal1[0];
+                                    List <String> list = new ArrayList<>(Arrays.asList(deal1));
+                                    list.remove(Value);
+                                    deal1 = list.toArray(new String[0]);
+                                    break;
+                                case 2:
+                                    TranslateTransition transition2 = new TranslateTransition(); 
+                                    transition2.setDuration(Duration.millis(250));
+                                    transition2.setNode(Image9);
+                                    transition2.setToY(0);
+                                    transition2.setToX(0);
+
+                                    Image9.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+deal1[0])));
+                                    Image02.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+deal1[0])));
+
+                                    transition2.setAutoReverse(true);
+                                    transition2.setCycleCount(2);
+                                    transition2.play();
+                                    
+                                    ChangeAnchor.setVisible(false);
+                                    
+                                    String Value2 = deal1[0];
+                                    List <String> list2 = new ArrayList<>(Arrays.asList(deal1));
+                                    list2.remove(Value2);
+                                    deal1 = list2.toArray(new String[0]);
+                                    break;
+                                case 3:
+                                    TranslateTransition transition3 = new TranslateTransition(); 
+                                    transition3.setDuration(Duration.millis(250));
+                                    transition3.setNode(Image14);
+                                    transition3.setToY(0);
+                                    transition3.setToX(0);
+
+                                    Image14.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+deal1[0])));
+                                    Image03.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+deal1[0])));
+
+                                    transition3.setAutoReverse(true);
+                                    transition3.setCycleCount(2);
+                                    transition3.play();
+                                    
+                                    ChangeAnchor.setVisible(false);
+                                    
+                                    String Value3 = deal1[0];
+                                    List <String> list3 = new ArrayList<>(Arrays.asList(deal1));
+                                    list3.remove(Value3);
+                                    deal1 = list3.toArray(new String[0]);
+                                    break;
+                                case 4:
+                                    TranslateTransition transition4 = new TranslateTransition(); 
+                                    transition4.setDuration(Duration.millis(250));
+                                    transition4.setNode(Image19);
+                                    transition4.setToY(0);
+                                    transition4.setToX(0);
+
+                                    Image19.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+deal1[0])));
+                                    Image04.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+deal1[0])));
+
+                                    transition4.setAutoReverse(true);
+                                    transition4.setCycleCount(2);
+                                    transition4.play();
+                                    
+                                    ChangeAnchor.setVisible(false);
+                                    
+                                    String Value4 = deal1[0];
+                                    List <String> list4 = new ArrayList<>(Arrays.asList(deal1));
+                                    list4.remove(Value4);
+                                    deal1 = list4.toArray(new String[0]);
+                                    break;
+                                case 5:
+                                    TranslateTransition transition5 = new TranslateTransition(); 
+                                    transition5.setDuration(Duration.millis(250));
+                                    transition5.setNode(Image24);
+                                    transition5.setToY(0);
+                                    transition5.setToX(0);
+
+                                    Image24.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+deal1[0])));
+                                    Image05.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+deal1[0])));
+
+                                    transition5.setAutoReverse(true);
+                                    transition5.setCycleCount(2);
+                                    transition5.play();
+                                    
+                                    ChangeAnchor.setVisible(false);
+                                    
+                                    String Value5 = deal1[0];
+                                    List <String> list5 = new ArrayList<>(Arrays.asList(deal1));
+                                    list5.remove(Value5);
+                                    deal1 = list5.toArray(new String[0]);
+                                    break;
+                            }
+                            break;
+                        case 5:
+                            switch(card)
+                            {
+                                case 1:
+                                    TranslateTransition transition1 = new TranslateTransition(); 
+                                    transition1.setDuration(Duration.millis(250));
+                                    transition1.setNode(Image5);
+                                    transition1.setToY(0);
+                                    transition1.setToX(0);
+
+                                    Image5.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+deal1[0])));
+                                    Image01.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+deal1[0])));
+
+                                    transition1.setAutoReverse(true);
+                                    transition1.setCycleCount(2);
+                                    transition1.play();
+                                    ChangeAnchor.setVisible(false);
+                                    
+                                    String Value = deal1[0];
+                                    List <String> list = new ArrayList<>(Arrays.asList(deal1));
+                                    list.remove(Value);
+                                    deal1 = list.toArray(new String[0]);
+                                    break;
+                                case 2:
+                                    TranslateTransition transition2 = new TranslateTransition(); 
+                                    transition2.setDuration(Duration.millis(250));
+                                    transition2.setNode(Image10);
+                                    transition2.setToY(0);
+                                    transition2.setToX(0);
+
+                                    Image10.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+deal1[0])));
+                                    Image02.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+deal1[0])));
+
+                                    transition2.setAutoReverse(true);
+                                    transition2.setCycleCount(2);
+                                    transition2.play();
+                                    
+                                    ChangeAnchor.setVisible(false);
+                                    
+                                    String Value2 = deal1[0];
+                                    List <String> list2 = new ArrayList<>(Arrays.asList(deal1));
+                                    list2.remove(Value2);
+                                    deal1 = list2.toArray(new String[0]);
+                                    break;
+                                case 3:
+                                    TranslateTransition transition3 = new TranslateTransition(); 
+                                    transition3.setDuration(Duration.millis(250));
+                                    transition3.setNode(Image15);
+                                    transition3.setToY(0);
+                                    transition3.setToX(0);
+
+                                    Image15.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+deal1[0])));
+                                    Image03.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+deal1[0])));
+
+                                    transition3.setAutoReverse(true);
+                                    transition3.setCycleCount(2);
+                                    transition3.play();
+                                    
+                                    ChangeAnchor.setVisible(false);
+                                    
+                                    String Value3 = deal1[0];
+                                    List <String> list3 = new ArrayList<>(Arrays.asList(deal1));
+                                    list3.remove(Value3);
+                                    deal1 = list3.toArray(new String[0]);
+                                    break;
+                                case 4:
+                                    TranslateTransition transition4 = new TranslateTransition(); 
+                                    transition4.setDuration(Duration.millis(250));
+                                    transition4.setNode(Image20);
+                                    transition4.setToY(0);
+                                    transition4.setToX(0);
+
+                                    Image20.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+deal1[0])));
+                                    Image04.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+deal1[0])));
+
+                                    transition4.setAutoReverse(true);
+                                    transition4.setCycleCount(2);
+                                    transition4.play();
+                                    
+                                    ChangeAnchor.setVisible(false);
+                                    
+                                    String Value4 = deal1[0];
+                                    List <String> list4 = new ArrayList<>(Arrays.asList(deal1));
+                                    list4.remove(Value4);
+                                    deal1 = list4.toArray(new String[0]);
+                                    break;
+                                case 5:
+                                    TranslateTransition transition5 = new TranslateTransition(); 
+                                    transition5.setDuration(Duration.millis(250));
+                                    transition5.setNode(Image25);
+                                    transition5.setToY(0);
+                                    transition5.setToX(0);
+
+                                    Image25.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+deal1[0])));
+                                    Image05.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/"+deal1[0])));
+
+                                    transition5.setAutoReverse(true);
+                                    transition5.setCycleCount(2);
+                                    transition5.play();
+                                    
+                                    ChangeAnchor.setVisible(false);
+                                    
+                                    String Value5 = deal1[0];
+                                    List <String> list5 = new ArrayList<>(Arrays.asList(deal1));
+                                    list5.remove(Value5);
+                                    deal1 = list5.toArray(new String[0]);
+                                    break;
+                            }
+                            break;
+                    }
+                    
+                    
+//                    timer1.cancel();
+//                }
+//            },1*1000);
+            
+            
+            
+            
+//            TranslateTransition transition190 = new TranslateTransition(); 
+//            transition190.setDuration(Duration.millis(250));
+//            transition190.setNode(Image2);
+//            transition190.setToY(-200);
+//            transition190.setToX(-290);
+//            transition190.play();
         }
         
         
