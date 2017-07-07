@@ -20,69 +20,6 @@
             <Image url="@res/Images/Background/UNADJUSTEDNONRAW_thumb_582a.jpg" />
          </image>
       </ImageView>
-      <AnchorPane fx:id="ChangeAnchor" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0,100,100,0.5);" visible="false">
-         <children>
-            <Button fx:id="yesButton" layoutX="350.0" layoutY="436.0" mnemonicParsing="false" onAction="#ChangeCard1" prefHeight="27.0" prefWidth="63.0" style="-fx-background-color: #3CB371; -fx-text-fill: #FFFFFF; -fx-background-radius: 200;" text="YES">
-               <font>
-                  <Font name="Assassin$" size="13.0" />
-               </font></Button>
-            <Button fx:id="noButton" layoutX="650.0" layoutY="436.0" mnemonicParsing="false" onAction="#Cancel" prefHeight="27.0" prefWidth="63.0" style="-fx-background-color: #3CB371; -fx-text-fill: #FFFFFF; -fx-background-radius: 200;" text="NO">
-               <font>
-                  <Font name="Assassin$" size="13.0" />
-               </font>
-            </Button>
-            <Label fx:id="message" layoutX="215.0" layoutY="337.0" prefHeight="37.0" prefWidth="617.0" text="Do you want to chage the current Card" textAlignment="CENTER" textFill="WHITE">
-               <font>
-                  <Font name="Assassin$" size="36.0" />
-               </font>
-            </Label>
-            <Label fx:id="qus" layoutX="794.0" layoutY="337.0" prefHeight="37.0" prefWidth="48.0" text="?" textFill="WHITE">
-               <font>
-                  <Font size="36.0" />
-               </font>
-            </Label>
-            <Label layoutX="498.0" layoutY="381.0" text="?">
-               <font>
-                  <Font name="Assassin$" size="67.0" />
-               </font>
-            </Label>
-            <Button fx:id="cancelButton" layoutX="478.0" layoutY="510.0" mnemonicParsing="false" onAction="#Cancel" prefHeight="27.0" prefWidth="91.0" style="-fx-background-color: #3CB371; -fx-text-fill: #FFFFFF; -fx-background-radius: 200;" text="CANCEL" visible="false">
-               <font>
-                  <Font name="Assassin$" size="13.0" />
-               </font>
-            </Button>
-         </children>
-      </AnchorPane>
-      <AnchorPane fx:id="ChangeCoinAnchor" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0,100,100,0.5);" visible="false">
-         <children>
-            <Slider fx:id="Coins" layoutX="287.0" layoutY="356.0" prefHeight="16.0" prefWidth="429.0">
-               <effect>
-                  <InnerShadow />
-               </effect></Slider>
-            <Label fx:id="CoinsValue" layoutX="736.0" layoutY="345.0" text="0" textFill="WHITE">
-               <font>
-                  <Font name="Assassin$" size="36.0" />
-               </font></Label>
-            <Label fx:id="CoinsValue1" layoutX="519.0" layoutY="284.0" prefHeight="37.0" prefWidth="81.0" text="Raise" textFill="WHITE">
-               <font>
-                  <Font name="Assassin$" size="36.0" />
-               </font>
-            </Label>
-            <Label fx:id="CoinsValue2" layoutX="716.0" layoutY="345.0" text="\$" textFill="WHITE">
-               <font>
-                  <Font name="Apple SD GothicNeo ExtraBold" size="36.0" />
-               </font>
-            </Label>
-            <Button fx:id="raise1" layoutX="451.0" layoutY="417.0" mnemonicParsing="false" onAction="#RaiseCoins" prefHeight="69.0" prefWidth="137.0" style="-fx-background-color: #00FFFF; -fx-background-radius: 200; -fx-text-fill: black;" text="RAISE">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Button>
-         </children>
-      </AnchorPane>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
             <ImageView fx:id="Image1" fitHeight="42.0" fitWidth="30.0" layoutX="509.0" layoutY="493.0" pickOnBounds="true" preserveRatio="true" rotate="-118.6" />
@@ -258,6 +195,69 @@
                   <Font size="10.0" />
                </font>
             </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="ChangeAnchor" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0,100,100,0.5);" visible="false">
+         <children>
+            <Button fx:id="yesButton" layoutX="350.0" layoutY="436.0" mnemonicParsing="false" onAction="#ChangeCard1" prefHeight="27.0" prefWidth="63.0" style="-fx-background-color: #3CB371; -fx-text-fill: #FFFFFF; -fx-background-radius: 200;" text="YES">
+               <font>
+                  <Font name="Assassin$" size="13.0" />
+               </font></Button>
+            <Button fx:id="noButton" layoutX="650.0" layoutY="436.0" mnemonicParsing="false" onAction="#Cancel" prefHeight="27.0" prefWidth="63.0" style="-fx-background-color: #3CB371; -fx-text-fill: #FFFFFF; -fx-background-radius: 200;" text="NO">
+               <font>
+                  <Font name="Assassin$" size="13.0" />
+               </font>
+            </Button>
+            <Label fx:id="message" layoutX="215.0" layoutY="337.0" prefHeight="37.0" prefWidth="617.0" text="Do you want to chage the current Card" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Assassin$" size="36.0" />
+               </font>
+            </Label>
+            <Label fx:id="qus" layoutX="794.0" layoutY="337.0" prefHeight="37.0" prefWidth="48.0" text="?" textFill="WHITE">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Label layoutX="498.0" layoutY="381.0" text="?">
+               <font>
+                  <Font name="Assassin$" size="67.0" />
+               </font>
+            </Label>
+            <Button fx:id="cancelButton" layoutX="478.0" layoutY="510.0" mnemonicParsing="false" onAction="#Cancel" prefHeight="27.0" prefWidth="91.0" style="-fx-background-color: #3CB371; -fx-text-fill: #FFFFFF; -fx-background-radius: 200;" text="CANCEL" visible="false">
+               <font>
+                  <Font name="Assassin$" size="13.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="ChangeCoinAnchor" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0,100,100,0.5);" visible="false">
+         <children>
+            <Slider fx:id="Coins" layoutX="287.0" layoutY="356.0" prefHeight="16.0" prefWidth="429.0">
+               <effect>
+                  <InnerShadow />
+               </effect></Slider>
+            <Label fx:id="CoinsValue" layoutX="736.0" layoutY="345.0" text="0" textFill="WHITE">
+               <font>
+                  <Font name="Assassin$" size="36.0" />
+               </font></Label>
+            <Label fx:id="CoinsValue1" layoutX="519.0" layoutY="284.0" prefHeight="37.0" prefWidth="81.0" text="Raise" textFill="WHITE">
+               <font>
+                  <Font name="Assassin$" size="36.0" />
+               </font>
+            </Label>
+            <Label fx:id="CoinsValue2" layoutX="716.0" layoutY="345.0" text="\$" textFill="WHITE">
+               <font>
+                  <Font name="Apple SD GothicNeo ExtraBold" size="36.0" />
+               </font>
+            </Label>
+            <Button fx:id="raise1" layoutX="451.0" layoutY="417.0" mnemonicParsing="false" onAction="#RaiseCoins" prefHeight="69.0" prefWidth="137.0" style="-fx-background-color: #00FFFF; -fx-background-radius: 200; -fx-text-fill: black;" text="RAISE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </children>

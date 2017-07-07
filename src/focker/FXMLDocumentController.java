@@ -15,8 +15,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 import java.util.ResourceBundle;
-import java.util.Timer;
-import java.util.TimerTask;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.animation.FadeTransition;
@@ -47,12 +45,11 @@ public class FXMLDocumentController implements Initializable {
     public static int sw = 1;
     public static int q;
     public static boolean rewrite = true;
-    public static int player;
+    public static int player = 2;
     public static int count = 0, c;
-    public static int coinCount = 1000;
-    public static int coinResult = coinCount;
+    //public static int coinCount = 1000;
+    public static int coinResult = 1000;
     public int remainder;
-    public int time;
 
     //First two  cards
     public static String player1[] = new String[2];
@@ -162,7 +159,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private Button raise1;
     @FXML
-    AnchorPane ChangeCoinAnchor;
+    private AnchorPane ChangeCoinAnchor;
     @FXML
     private Button Start;
     @FXML
@@ -217,7 +214,7 @@ public class FXMLDocumentController implements Initializable {
 
     //move two cards each player
     @FXML
-    public void BeginButton(ActionEvent event) throws FileNotFoundException, IOException {
+    public void BeginButton(ActionEvent event) throws FileNotFoundException, IOException, InterruptedException {
         Cards1 big = new Cards1();
         big.Begin();
     }
@@ -355,7 +352,7 @@ public class FXMLDocumentController implements Initializable {
 
                 CoinsValue.setText("" + newValue.intValue());
                 int v = newValue.intValue();
-                remainder = coinResult - v;
+                coinResult = v;
 
             }
         });
@@ -503,9 +500,9 @@ public class FXMLDocumentController implements Initializable {
                 //Scene scene = new Scene(root);
             }
             sw = 1;
-            for (int c = 10; c <= 24; c++) {
+            for (int cc = 10; cc <= 24; cc++) {
 
-                int posi = card1[c];
+                int posi = card1[cc];
                 switch (sw) {
                     case 1:
                         player01[0] = cards[posi];
@@ -620,7 +617,7 @@ public class FXMLDocumentController implements Initializable {
         /**
          * first begin with two cards face down to each player.
          */
-        public void Begin() throws FileNotFoundException, IOException {
+        public void Begin() throws FileNotFoundException, IOException, InterruptedException {
 //            for(int p = 1;p<=10;p++)
 //            {
             Image1.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/BackC.png")));
@@ -697,48 +694,20 @@ public class FXMLDocumentController implements Initializable {
             Image01.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/BackC.png")));
             Image02.setImage(new Image(getClass().getResourceAsStream("res/Images/cards/BackC.png")));
 
-            Timer timer = new Timer();
-            TimerTask task = new TimerTask() {
-                @Override
-                public void run() {
-                    System.out.println("time1111");
-                    try {
-                        CardSelect(player);
-                    } catch (IOException ex) {
-                        Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                }
-            };
-            timer.schedule(task, 5000);
-            
-            
-            if (time == 5)
-            {
-                System.out.println("tim232");
-                Cards1 crd = new Cards1();
-                crd.CardSelect(player);
-            }
-//                Timer timer = new Timer();
-//                TimerTask task;
-//            task = new TimerTask() {
+//            new java.util.Timer().schedule(
+//                    new java.util.TimerTask() {
 //                @Override
 //                public void run() {
-//                    Cards1 crd = null;
 //                    try {
-//                        crd = new Cards1();
-//                    } catch (FileNotFoundException ex) {
-//                        Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
-//                    }
-//                    player = 2;
-//                    try {
-//                        crd.CardSelect(player);
+//                        CardSelect(player);
 //                    } catch (IOException ex) {
-//                        Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
+//                        
 //                    }
 //                }
-//            };
-//                timer.schedule(task, 5000l);
-//            }
+//            },
+//                    5000
+//            );
+            CardSelect(player);
         }
 
         /**
@@ -2109,7 +2078,8 @@ public class FXMLDocumentController implements Initializable {
         }
 
         private void coins() {
-            System.out.println(remainder);
+            System.out.println(coinResult);
+
             ChangeCoinAnchor.setVisible(false);
             FadeTransition fadeout = new FadeTransition(javafx.util.Duration.seconds(2), ChangeCoinAnchor);
             fadeout.setFromValue(1);
