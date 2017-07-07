@@ -6,9 +6,13 @@
 package focker;
 
 import javafx.application.Application;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.control.Slider;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
@@ -40,6 +44,7 @@ public class Focker extends Application {
 
         Parent root = FXMLLoader.load(getClass().getResource("main_menu.fxml"));
         Scene scene = new Scene(root);
+        
         String css = Focker.class.getResource("screenControler.css").toExternalForm();
         scene.getStylesheets().add(css);
         stage.setScene(scene);

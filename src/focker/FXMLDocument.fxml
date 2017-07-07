@@ -5,10 +5,12 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="710.0" prefWidth="1047.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="focker.FXMLDocumentController">
@@ -18,6 +20,69 @@
             <Image url="@res/Images/Background/UNADJUSTEDNONRAW_thumb_582a.jpg" />
          </image>
       </ImageView>
+      <AnchorPane fx:id="ChangeAnchor" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0,100,100,0.5);" visible="false">
+         <children>
+            <Button fx:id="yesButton" layoutX="350.0" layoutY="436.0" mnemonicParsing="false" onAction="#ChangeCard1" prefHeight="27.0" prefWidth="63.0" style="-fx-background-color: #3CB371; -fx-text-fill: #FFFFFF; -fx-background-radius: 200;" text="YES">
+               <font>
+                  <Font name="Assassin$" size="13.0" />
+               </font></Button>
+            <Button fx:id="noButton" layoutX="650.0" layoutY="436.0" mnemonicParsing="false" onAction="#Cancel" prefHeight="27.0" prefWidth="63.0" style="-fx-background-color: #3CB371; -fx-text-fill: #FFFFFF; -fx-background-radius: 200;" text="NO">
+               <font>
+                  <Font name="Assassin$" size="13.0" />
+               </font>
+            </Button>
+            <Label fx:id="message" layoutX="215.0" layoutY="337.0" prefHeight="37.0" prefWidth="617.0" text="Do you want to chage the current Card" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Assassin$" size="36.0" />
+               </font>
+            </Label>
+            <Label fx:id="qus" layoutX="794.0" layoutY="337.0" prefHeight="37.0" prefWidth="48.0" text="?" textFill="WHITE">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Label layoutX="498.0" layoutY="381.0" text="?">
+               <font>
+                  <Font name="Assassin$" size="67.0" />
+               </font>
+            </Label>
+            <Button fx:id="cancelButton" layoutX="478.0" layoutY="510.0" mnemonicParsing="false" onAction="#Cancel" prefHeight="27.0" prefWidth="91.0" style="-fx-background-color: #3CB371; -fx-text-fill: #FFFFFF; -fx-background-radius: 200;" text="CANCEL" visible="false">
+               <font>
+                  <Font name="Assassin$" size="13.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="ChangeCoinAnchor" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0,100,100,0.5);" visible="false">
+         <children>
+            <Slider fx:id="Coins" layoutX="287.0" layoutY="356.0" prefHeight="16.0" prefWidth="429.0">
+               <effect>
+                  <InnerShadow />
+               </effect></Slider>
+            <Label fx:id="CoinsValue" layoutX="736.0" layoutY="345.0" text="0" textFill="WHITE">
+               <font>
+                  <Font name="Assassin$" size="36.0" />
+               </font></Label>
+            <Label fx:id="CoinsValue1" layoutX="519.0" layoutY="284.0" prefHeight="37.0" prefWidth="81.0" text="Raise" textFill="WHITE">
+               <font>
+                  <Font name="Assassin$" size="36.0" />
+               </font>
+            </Label>
+            <Label fx:id="CoinsValue2" layoutX="716.0" layoutY="345.0" text="\$" textFill="WHITE">
+               <font>
+                  <Font name="Apple SD GothicNeo ExtraBold" size="36.0" />
+               </font>
+            </Label>
+            <Button fx:id="raise1" layoutX="451.0" layoutY="417.0" mnemonicParsing="false" onAction="#RaiseCoins" prefHeight="69.0" prefWidth="137.0" style="-fx-background-color: #00FFFF; -fx-background-radius: 200; -fx-text-fill: black;" text="RAISE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
             <ImageView fx:id="Image1" fitHeight="42.0" fitWidth="30.0" layoutX="509.0" layoutY="493.0" pickOnBounds="true" preserveRatio="true" rotate="-118.6" />
@@ -50,7 +115,7 @@
             <ImageView fx:id="Image28" fitHeight="63.0" fitWidth="48.0" layoutX="499.0" layoutY="472.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="Image29" fitHeight="63.0" fitWidth="48.0" layoutX="499.0" layoutY="472.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="Image30" fitHeight="63.0" fitWidth="48.0" layoutX="499.0" layoutY="472.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="Image01" fitHeight="87.0" fitWidth="63.0" layoutX="100.0" layoutY="598.0" onMouseClicked="#imgClick" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="Image01" fitHeight="73.0" fitWidth="52.0" layoutX="100.0" layoutY="598.0" onMouseClicked="#imgClick" pickOnBounds="true" preserveRatio="true">
                <effect>
                   <DropShadow color="#ff1111" height="80.2" radius="39.22" width="78.68" />
                </effect>
@@ -59,7 +124,7 @@
                   <Cursor fx:constant="OPEN_HAND" />
                </cursor>
             </ImageView>
-            <ImageView fx:id="Image02" fitHeight="87.0" fitWidth="63.0" layoutX="176.0" layoutY="598.0" onMouseClicked="#imgClick2" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="Image02" fitHeight="73.0" fitWidth="52.0" layoutX="175.0" layoutY="598.0" onMouseClicked="#imgClick2" pickOnBounds="true" preserveRatio="true">
                <effect>
                   <DropShadow color="#ff1111" height="87.79" radius="41.875" width="81.71" />
                </effect>
@@ -67,19 +132,19 @@
                   <Cursor fx:constant="OPEN_HAND" />
                </cursor>
             </ImageView>
-            <ImageView fx:id="Image03" fitHeight="87.0" fitWidth="63.0" layoutX="251.0" layoutY="598.0" onMouseClicked="#imgClick3" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="Image03" fitHeight="73.0" fitWidth="52.0" layoutX="251.0" layoutY="598.0" onMouseClicked="#imgClick3" pickOnBounds="true" preserveRatio="true">
                <cursor>
                   <Cursor fx:constant="OPEN_HAND" />
                </cursor></ImageView>
-            <ImageView fx:id="Image04" fitHeight="87.0" fitWidth="63.0" layoutX="326.0" layoutY="598.0" onMouseClicked="#imgClick4" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="Image04" fitHeight="73.0" fitWidth="52.0" layoutX="326.0" layoutY="598.0" onMouseClicked="#imgClick4" pickOnBounds="true" preserveRatio="true">
                <cursor>
                   <Cursor fx:constant="OPEN_HAND" />
                </cursor></ImageView>
-            <ImageView fx:id="Image05" fitHeight="87.0" fitWidth="63.0" layoutX="401.0" layoutY="598.0" onMouseClicked="#imgClick5" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="Image05" fitHeight="73.0" fitWidth="52.0" layoutX="401.0" layoutY="598.0" onMouseClicked="#imgClick5" pickOnBounds="true" preserveRatio="true">
                <cursor>
                   <Cursor fx:constant="OPEN_HAND" />
                </cursor></ImageView>
-            <Button fx:id="bet" layoutX="910.0" layoutY="657.0" mnemonicParsing="false" onAction="#Others" style="-fx-background-color: #ff0000; -fx-background-radius: 22; -fx-text-fill: #ffffff;" text="BET">
+            <Button fx:id="bet" layoutX="913.0" layoutY="657.0" mnemonicParsing="false" onAction="#Others" style="-fx-background-color: #ff0000; -fx-background-radius: 22; -fx-text-fill: #ffffff;" text="BET">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -91,55 +156,108 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="Play" layoutX="964.0" layoutY="656.0" mnemonicParsing="false" onAction="#TCareds" style="-fx-background-color: #ff0000; -fx-background-radius: 22; -fx-text-fill: #ffffff;" text="PLAY">
+            <Button fx:id="Play" layoutX="971.0" layoutY="656.0" mnemonicParsing="false" onAction="#TCareds" style="-fx-background-color: #ff0000; -fx-background-radius: 22; -fx-text-fill: #ffffff;" text="PLAY">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="call" layoutX="823.0" layoutY="656.0" mnemonicParsing="false" onAction="#BeginButton" prefHeight="27.0" prefWidth="77.0" style="-fx-background-color: #42668a; -fx-background-radius: 20; -fx-text-fill: #ffffff;" text="CALL">
+            <Button fx:id="call" layoutX="837.0" layoutY="656.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="27.0" prefWidth="63.0" style="-fx-background-color: #42668a; -fx-background-radius: 20; -fx-text-fill: #ffffff;" text="CALL">
 
                                        <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="show" layoutX="729.0" layoutY="656.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="27.0" prefWidth="84.0" style="-fx-background-color: #0000CD; -fx-background-radius: 22; -fx-text-fill: #ffffff;" text="RAISE">
+            <Button fx:id="show" layoutX="740.0" layoutY="656.0" mnemonicParsing="false" onAction="#Raise" prefHeight="27.0" prefWidth="73.0" style="-fx-background-color: #0000CD; -fx-background-radius: 22; -fx-text-fill: #ffffff;" text="RAISE">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-         </children>
-      </AnchorPane>
-      <AnchorPane fx:id="ChangeAnchor" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0,100,100,0.5);" visible="false">
-         <children>
-            <Button layoutX="350.0" layoutY="436.0" mnemonicParsing="false" onAction="#ChangeCard1" prefHeight="27.0" prefWidth="63.0" style="-fx-background-color: #3CB371; -fx-text-fill: #FFFFFF; -fx-background-radius: 200;" text="YES">
+            <Button fx:id="Start" layoutX="559.0" layoutY="657.0" mnemonicParsing="false" onAction="#BeginButton" style="-fx-background-color: yellow; -fx-text-fill: black; -fx-background-radius: 500;" text="Start" />
+            <Rectangle arcHeight="85.0" arcWidth="85.0" fill="DODGERBLUE" height="77.0" layoutX="13.0" layoutY="45.0" opacity="0.65" stroke="WHITE" width="232.0" />
+            <ImageView fitHeight="69.0" fitWidth="69.0" layoutX="17.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@res/Images/ProfilePic/boy-1.png" />
+               </image>
+            </ImageView>
+            <Rectangle arcHeight="85.0" arcWidth="85.0" fill="DODGERBLUE" height="78.0" layoutX="409.0" layoutY="21.0" opacity="0.65" stroke="WHITE" width="229.0" />
+            <ImageView fitHeight="69.0" fitWidth="69.0" layoutX="412.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@res/Images/ProfilePic/boy.png" />
+               </image>
+            </ImageView>
+            <Rectangle arcHeight="85.0" arcWidth="85.0" fill="DODGERBLUE" height="78.0" layoutX="801.0" layoutY="48.0" opacity="0.65" stroke="WHITE" width="230.0" />
+            <ImageView fitHeight="69.0" fitWidth="69.0" layoutX="804.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@res/Images/ProfilePic/man-1.png" />
+               </image>
+            </ImageView>
+            <Rectangle arcHeight="85.0" arcWidth="85.0" fill="DODGERBLUE" height="78.0" layoutX="15.0" layoutY="384.0" opacity="0.65" stroke="WHITE" width="229.0" />
+            <ImageView fitHeight="69.0" fitWidth="69.0" layoutX="18.0" layoutY="389.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@res/Images/ProfilePic/man.png" />
+               </image>
+            </ImageView>
+            <Rectangle arcHeight="85.0" arcWidth="85.0" fill="DODGERBLUE" height="78.0" layoutX="798.0" layoutY="384.0" opacity="0.65" stroke="WHITE" width="229.0" />
+            <ImageView fitHeight="69.0" fitWidth="69.0" layoutX="802.0" layoutY="389.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@res/Images/ProfilePic/man-2.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="User2" layoutX="103.0" layoutY="52.0" text="User Name" textFill="WHITE" />
+            <Label fx:id="u2" layoutX="94.0" layoutY="91.0" text="Label" textFill="WHITE">
                <font>
-                  <Font name="Assassin$" size="13.0" />
-               </font></Button>
-            <Button layoutX="650.0" layoutY="436.0" mnemonicParsing="false" onAction="#Cancel" prefHeight="27.0" prefWidth="63.0" style="-fx-background-color: #3CB371; -fx-text-fill: #FFFFFF; -fx-background-radius: 200;" text="NO">
-               <font>
-                  <Font name="Assassin$" size="13.0" />
-               </font>
-            </Button>
-            <Label layoutX="215.0" layoutY="337.0" prefHeight="37.0" prefWidth="617.0" text="Do you want to chage the current Card" textAlignment="CENTER" textFill="WHITE">
-               <font>
-                  <Font name="Assassin$" size="36.0" />
+                  <Font size="10.0" />
                </font>
             </Label>
-            <Label layoutX="794.0" layoutY="337.0" prefHeight="37.0" prefWidth="48.0" text="?" textFill="WHITE">
+            <Label fx:id="u2Score" layoutX="150.0" layoutY="91.0" text="Score" textFill="WHITE">
                <font>
-                  <Font size="36.0" />
+                  <Font size="10.0" />
                </font>
             </Label>
-            <Label layoutX="498.0" layoutY="381.0" text="?">
+            <Label fx:id="User3" layoutX="505.0" layoutY="29.0" text="User Name" textFill="WHITE" />
+            <Label fx:id="u3" layoutX="496.0" layoutY="67.0" text="Label" textFill="WHITE">
                <font>
-                  <Font name="Assassin$" size="67.0" />
+                  <Font size="10.0" />
                </font>
             </Label>
-         </children>
-      </AnchorPane>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0,100,100,0.5);" visible="false">
-         <children>
-            <Slider layoutX="454.0" layoutY="347.0" />
+            <Label fx:id="u3Score" layoutX="550.0" layoutY="66.0" text="Score" textFill="WHITE">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="User4" layoutX="893.0" layoutY="58.0" text="User Name" textFill="WHITE" />
+            <Label fx:id="u4" layoutX="887.0" layoutY="93.0" text="Label" textFill="WHITE">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="u4Score" layoutX="948.0" layoutY="93.0" text="Score" textFill="WHITE">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="User1" layoutX="107.0" layoutY="392.0" text="User Name" textFill="WHITE" />
+            <Label fx:id="u1" layoutX="99.0" layoutY="432.0" text="Label" textFill="WHITE">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="User11" layoutX="893.0" layoutY="394.0" text="User Name" textFill="WHITE" />
+            <Label fx:id="u1Score" layoutX="164.0" layoutY="432.0" text="Score" textFill="WHITE">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="u5" layoutX="882.0" layoutY="435.0" text="Label" textFill="WHITE">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="u5Score" layoutX="939.0" layoutY="432.0" text="Score" textFill="WHITE">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </children>
